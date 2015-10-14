@@ -15,7 +15,7 @@
 ##################
 #exec --no-startup-id xrandr --output HDMI-1 --primary --auto
 #exec --no-startup-id xrandr --output DVI-D-1 --auto --right-of HDMI-1 
-exec --no-startup-id exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id eval $(cat ~/.fehbg)
 
 set $mod Mod4
@@ -47,9 +47,15 @@ bindsym $mod+x exec "/home/brooks/bin/lock.sh"
 #bind the print screen button to taking a screenshot
 bindsym Print exec scrot
 
+# Volume controls.
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 2dB+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q set Master 2dB- unmute"
 bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
+
+# Volume control for keyboards without specialized volume buttons.
+bindsym F10			exec amixer -D pulse sset Master toggle
+bindsym F11         exec amixer -D pulse sset Master 3%-
+bindsym F12	        exec amixer -D pulse sset Master 3%+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -94,7 +100,7 @@ bindsym $mod+v split h
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# change container layout (stacked, tabbed, toggle split)
+# change container layout (stacked, tabbed, toggle next
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -110,6 +116,10 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# Switch workspace up & down.
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
 
 # switch to workspace
 bindsym $mod+1 workspace 1
