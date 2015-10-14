@@ -1,0 +1,12 @@
+[user]
+	email = brooks.kindle@wsu.edu
+	name = Brooks Kindle
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[push]
+	default = simple
