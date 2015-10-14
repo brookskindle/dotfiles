@@ -157,4 +157,4 @@ hi ColorColumn ctermbg=4
 
 " Use syntax highlighting and color scheme
 syntax enable
-colorscheme molokai
+colorscheme monokain
