@@ -9,7 +9,7 @@ cd ~/
 git clone https://github.com/brookskindle/dotfiles
 cd dotfiles
 ```
-From here, use stow to install the dotfiles.
+From here, use stow to install or uninstall the dotfiles.
 `stow vim  # Install vim dotfiles`
 `stow -D vim  # Uninstall vim dotfiles`
 
