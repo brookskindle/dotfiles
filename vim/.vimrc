@@ -29,6 +29,9 @@ set nobackup
 set noswapfile
 set nowritebackup
 
+" Allow switching between buffers without saving first
+set hidden
+
 " Display position coordinates in bottom right
 set ruler
 
@@ -130,10 +133,10 @@ noremap H :bprev<CR>
 noremap L :bnext<CR>
 
 " Remap window movement
-nmap <C-H> <C-w>H
-nmap <C-J> <C-w>J
-nmap <C-K> <C-w>K
-nmap <C-L> <C-w>L
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " Replace f with sneak
 nmap f <Plug>Sneak_s
