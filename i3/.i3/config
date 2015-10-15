@@ -117,9 +117,13 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Switch workspace up & down.
+# Switch to relative workspace.
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
+
+# Move window to next or previous workspace.
+bindsym $mod+shift+comma move workspace prev
+bindsym $mod+shift+period move workspace next
 
 # switch to workspace
 bindsym $mod+1 workspace 1
