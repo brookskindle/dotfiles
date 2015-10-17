@@ -115,3 +115,7 @@ fi
 
 #remove ctrl-s and ctrl-q
 stty -ixon
+
+# Unify bash history scross terminals
+shopt -s histappend
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
