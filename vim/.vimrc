@@ -87,7 +87,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'justinmk/vim-sneak'
-"Plugin 'suan/vim-instant-markdown'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'flazz/vim-colorschemes'
 
 " Turn filetype back on

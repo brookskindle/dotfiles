@@ -1,0 +1,5 @@
+nmap J :bp<cr>
+nmap K :bn<cr>
+
+" From https://github.com/vimpr/vimperator-colors
+colorscheme indigo
