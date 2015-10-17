@@ -20,6 +20,36 @@ URxvt*foreground: White
 # background color (prior to tinting) (default is white)
 URxvt*background: #2e3436
 
+! █▓▒░ scorcerer colors
+! black
+*.color0:       #222222
+*.color8:       #272822
+! red
+*.color1:       #f78b8b
+*.color9:       #ff6a6a
+! green
+*.color2:       #719611
+*.color10:      #19ff19
+! yellow
+*.color3:       #cc8800
+*.color11:      #ff9800
+! blue
+*.color4:       #729FCF
+*.color12:      #729FCF
+! magenta
+*.color5:       #8f6f8f
+*.color13:      #8181a6
+! cyan
+*.color6:       #528b8b
+*.color14:      #63FAFD
+! white
+*.color7:       #d3d3d3
+*.color15:      #c1cdc1
+
+URxvt.colorIT:  #719611
+URxvt.colorBD:  #d3d3d3
+URxvt.colorUL:  #528b8b
+
 # Xft (X FreeType) with Bitstream, DejaVu, Liberation, or Terminus fonts:
 #  Fedora/debian packages: libXft/libxft2 
 #  An anti-aliased font setup with Xft looks fantastic; it can be a bit choppy 
@@ -55,8 +85,6 @@ URxvt*boldFont: xft:Droid Sans Mono for Powerline:bold:pixelsize=11:antialias=tr
 #  the following line to your ~/.bashrc ($HOME/.bashrc) file under
 #  the heading "# User specific aliases and functions":
 #   alias ls="ls -h --color=auto"
-URxvt*color4: #729FCF
-URxvt*color12: #729FCF
 
 # scrollbar - true (default) or false
 URxvt*scrollBar: false
