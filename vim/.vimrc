@@ -132,6 +132,9 @@ nmap k gk
 noremap H :bprev<CR>
 noremap L :bnext<CR>
 
+" Let Ctrl-c act like Escape for insert mode.
+inoremap <C-c> <Esc>
+
 " Remap window movement
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
