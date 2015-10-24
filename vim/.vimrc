@@ -89,6 +89,8 @@ Plugin 'bling/vim-bufferline'
 Plugin 'justinmk/vim-sneak'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'xero/sourcerer.vim'
+Plugin 'Haron-Prime/evening_vim'
 
 " Turn filetype back on
 filetype plugin indent on
