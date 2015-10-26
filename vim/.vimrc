@@ -121,6 +121,9 @@ let g:syntastic_python_python_exec = 'python'
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
 
+" Ignore case with sneak
+let g:sneak#use_ic_scs = 1
+
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
@@ -131,6 +134,8 @@ nnoremap tn :NERDTreeToggle<CR>
 
 nmap j gj
 nmap k gk
+
+" Switch between buffers.
 noremap H :bprev<CR>
 noremap L :bnext<CR>
 
