@@ -12,6 +12,3 @@ alias t="tmux -2 new-session"
 # common mis-spellings
 alias cd..="cd .."
 alias sl="ls"
-
-# git achievements
-alias git=~/bin/git-achievements/git-achievements

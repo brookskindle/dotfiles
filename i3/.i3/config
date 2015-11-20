@@ -39,7 +39,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+b exec x-www-browser
 
 #start the file manager
-bindsym $mod+t exec nautilus
+bindsym $mod+t exec thunar
 
 #lock the screen
 bindsym $mod+x exec "/home/brooks/bin/lock.sh"
