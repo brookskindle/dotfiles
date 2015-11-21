@@ -91,6 +91,8 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'xero/sourcerer.vim'
 Plugin 'Haron-Prime/evening_vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " Turn filetype back on
 filetype plugin indent on
@@ -130,7 +132,8 @@ let g:sneak#use_ic_scs = 1
 
 """""keymappings for plugins"""""
 nnoremap tt :TagbarOpenAutoClose<CR>
-nnoremap tn :NERDTreeToggle<CR>
+nnoremap <tab><tab> :NERDTreeToggle<CR>
+nnoremap <C-f> :GitFiles<CR>
 
 nmap j gj
 nmap k gk

@@ -122,3 +122,5 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 
 # Extend git with hub
 eval "$(hub alias -s)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
