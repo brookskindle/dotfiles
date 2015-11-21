@@ -49,12 +49,7 @@ bindsym Print exec scrot
 # Volume controls.
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 2dB+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q set Master 2dB- unmute"
-bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
-
-# Volume control for keyboards without specialized volume buttons.
-bindsym F10			exec amixer -D pulse sset Master toggle
-bindsym F11         exec amixer -D pulse sset Master 3%-
-bindsym F12	        exec amixer -D pulse sset Master 3%+
+bindsym XF86AudioMute exec "amixer -q set Master toggle"
 
 # kill focused window
 bindsym $mod+Shift+q kill
