@@ -16,7 +16,7 @@
 #exec --no-startup-id xrandr --output HDMI-1 --primary --auto
 #exec --no-startup-id xrandr --output DVI-D-1 --auto --right-of HDMI-1 
 exec --no-startup-id nm-applet
-exec --no-startup-id eval $(cat ~/.fehbg)
+exec --no-startup-id "xrandr --output HDMI-1 --auto --primary --output DVI-D-1 --auto --right-of HDMI-1 && sleep 2 && sh ~/.fehbg &"
 
 set $mod Mod4
 
