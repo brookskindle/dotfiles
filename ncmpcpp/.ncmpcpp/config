@@ -1,3 +1,14 @@
-mpd_host = "localhost"
-mpd_port = "6600"
-mpd_music_dir = "/home/brooks/Music/
+#
+# MPD Configuration
+#
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = /home/brooks/Music/
+
+#
+# Visual Configuration
+#
+jump_to_now_playing_song_at_start = yes
+mouse_support = no
+centered_cursor = yes
+playlist_disable_highlight_delay = 0
