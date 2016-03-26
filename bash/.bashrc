@@ -124,3 +124,8 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 eval "$(hub alias -s)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Go development
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/code/go
+export PATH=$PATH:$GOPATH/bin
