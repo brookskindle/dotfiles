@@ -23,16 +23,17 @@ URxvt*background: #2e3436
 ! █▓▒░ scorcerer colors
 ! black
 *.color0:       #222222
+! Light pink
+*.color1:       #D5353A
 ! red
-*.color1:       #D92626
 *.color9:       #ff6a6a
 ! green
 *.color2:       #719611
 *.color10:      #19ff19
 *.color8:       #00cc00
 ! yellow
-*.color3:       #cc8800
-*.color11:      #ff9800
+*.color3:       #E7C034
+*.color11:      #DDBC24
 ! blue
 *.color4:       #729FCF
 *.color12:      #729FCF
