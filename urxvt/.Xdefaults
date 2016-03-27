@@ -23,17 +23,16 @@ URxvt*background: #2e3436
 ! █▓▒░ scorcerer colors
 ! black
 *.color0:       #222222
-! Light pink
-*.color1:       #D5353A
 ! red
+*.color1:       #f78b8b
 *.color9:       #ff6a6a
 ! green
 *.color2:       #719611
 *.color10:      #19ff19
 *.color8:       #00cc00
 ! yellow
-*.color3:       #E7C034
-*.color11:      #DDBC24
+*.color3:       #EDF42F
+*.color11:      #ECD220
 ! blue
 *.color4:       #729FCF
 *.color12:      #729FCF
@@ -89,3 +88,10 @@ URxvt*boldFont: xft:Droid Sans Mono for Powerline:bold:pixelsize=11:antialias=tr
 
 # scrollbar - true (default) or false
 URxvt*scrollBar: false
+
+# Enable opening url links in the terminal.
+URxvt*perl-ext-common: default,matcher
+URxvt*url-launcher: /usr/bin/firefox
+URxvt*matcher.button: 1
+URxvt.keysym.C-S-Return: perl:matcher:list
+URxvt.keysym.M-Delete: perl:matcher:last

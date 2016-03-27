@@ -113,19 +113,41 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#remove ctrl-s and ctrl-q
+# Virtualenvwrapper for necessary python development
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# Remove ctrl-s and ctrl-q screen pause/resume functionality on terminal
 stty -ixon
 
-# Unify bash history scross terminals
-shopt -s histappend
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+# Manually set dir colors (nfs dirs are impossible to read by default)
+# If you don't have a dircolors file, create it with 
+# dircolors -p > ~/.dircolors'
+eval $(dircolors -b ~/.dircolors)
 
-# Extend git with hub
-eval "$(hub alias -s)"
+# Urxvt sets TEMPDIR and not TMPDIR. Tmux expects TMPDIR to determine where to
+# store the default socket (see man tmux).
+export TMPDIR=$TEMPDIR
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Use fzf for awesome fuzzy completion!
+# https://github.com/junegunn/fzf
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+fi
 
 # Go development
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin
+
+# Autocomplete for python argparse using argcomplete
+# https://github.com/kislyuk/argcomplete
+if [ -f ~/.argcomplete ]; then
+    source ~/.argcomplete
+fi
+
+# Use sensible bash options
+if [ -f ~/.sensible.bash ]; then
+    source ~/.sensible.bash
+fi

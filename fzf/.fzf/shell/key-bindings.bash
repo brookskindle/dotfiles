@@ -57,7 +57,7 @@ if [ -z "$(set -o | \grep '^vi.*on')" ]; then
   bind '"\er": redraw-current-line'
   bind '"\e^": history-expand-line'
 
-  # CTRL-T - Paste the selected file path into the command line
+  # CTRL-F - Paste the selected file path into the command line
   if [ $__use_tmux -eq 1 ]; then
     bind '"\C-f": " \C-u \C-a\C-k$(__fzf_select_tmux__)\e\C-e\C-y\C-a\C-d\C-y\ey\C-h"'
   else
@@ -74,7 +74,7 @@ else
   bind '"\C-x\C-r": redraw-current-line'
   bind '"\C-x^": history-expand-line'
 
-  # CTRL-T - Paste the selected file path into the command line
+  # CTRL-F - Paste the selected file path into the command line
   # - FIXME: Selected items are attached to the end regardless of cursor position
   if [ $__use_tmux -eq 1 ]; then
     bind '"\C-f": "\e$a \eddi$(__fzf_select_tmux__)\C-x\C-e\e0P$xa"'

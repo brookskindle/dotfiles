@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Obtains the TLS fingerprint for Pandora. Useful for updating pianobar config.
+# from https://gist.github.com/r35krag0th/4173333
+openssl s_client -connect tuner.pandora.com:443 < /dev/null 2> /dev/null | \
+    openssl x509 -noout -fingerprint | tr -d ':' | cut -d'=' -f2

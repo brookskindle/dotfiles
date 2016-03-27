@@ -21,13 +21,8 @@ set tabstop=4
 " Use expected backspace behavior
 set backspace=indent,eol,start
 
-" Turn off search highlighting
-set nohls
-
-" Turn of swap files and backups
-set nobackup
-set noswapfile
-set nowritebackup
+" Turn on search highlighting
+set hls
 
 " Allow switching between buffers without saving first
 set hidden
@@ -39,7 +34,7 @@ set ruler
 set number
 
 " Get rid of omnicomplete doc preview
-set completeopt=menu
+"set completeopt=menu
 
 " Use filetype-specific plugins and indentation
 set nosmartindent
@@ -47,7 +42,7 @@ set nosmartindent
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
 
-" Use two-space tabs for javascrit
+" Use two-space tabs for javascript
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Ignore compiled python
@@ -126,17 +121,30 @@ let g:airline_powerline_fonts = 1
 " Ignore case with sneak
 let g:sneak#use_ic_scs = 1
 
+" Prevent instant markdown viewer on startup
+let g:instant_markdown_autostart = 0
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-o': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ============= Custom Key Bindings ==============
 
 """""keymappings for plugins"""""
 nnoremap tt :TagbarOpenAutoClose<CR>
-nnoremap <tab><tab> :NERDTreeToggle<CR>
+"nnoremap <tab><tab> :NERDTreeToggle<CR>
 nnoremap <C-f> :GitFiles<CR>
 
+" Move up/down a line visually regardless of the length of the line.
 nmap j gj
 nmap k gk
+
+" Use Ctrl-z to increment a number (Ctrl-a is taken by Tmux)
+map <C-z> <C-a>
 
 " Switch between buffers.
 noremap H :bprev<CR>
@@ -159,6 +167,12 @@ nmap <C-l> <C-w>l
 "omap f <Plug>Sneak_s
 "omap F <Plug>Sneak_S
 
+" """"""""""""""""""""""""""""""""""""""""""""""""
+" ==================== Macros ====================
+
+" Python debug macros
+let @p = 'Oimport pdb; pdb.set_trace()'
+let @o = 'Ofrom nose.tools import set_trace; set_trace()'
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================

@@ -1,5 +1,10 @@
+" Move through tabs
 nmap J :bp<cr>
 nmap K :bn<cr>
+
+" Reorder tabs
+nmap <C-S-J> :tabm -1<CR>
+nmap <C-S-K> :tabm +1<CR>
 
 " From https://github.com/vimpr/vimperator-colors
 colorscheme indigo
