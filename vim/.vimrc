@@ -113,7 +113,7 @@ let g:syntastic_python_checkers=['pylint']
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 "use python for syntax checking
-let g:syntastic_python_python_exec = 'python'
+"let g:syntastic_python_python_exec = 'python'
 
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
