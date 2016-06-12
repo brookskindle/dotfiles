@@ -124,6 +124,9 @@ bindsym $mod+shift+period exec focus_workspace right --move
 # Jump to workspace via a dmenu prompt
 bindsym $mod+n exec jump_workspace
 
+# Rename the current workspace
+bindsym $mod+m exec rename_workspace
+
 # Switch to the last workspace used
 bindsym $mod+apostrophe workspace back_and_forth
 bindsym $mod+shift+apostrophe move container to workspace back_and_forth
