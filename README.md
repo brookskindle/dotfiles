@@ -1,6 +1,6 @@
 # Dotfiles
 My collection of dotfiles, managed by [gnu
-stow](https://www.gnu.org/software/stow/). These are inspired by [xero's
+stow](https://www.gnu.org/software/stow/) and ansible These are inspired by [xero's
 dotfiles](https://github.com/xero/dotfiles).
 
 ## Installation
@@ -16,3 +16,6 @@ stow -D vim  # Uninstall vim dotfiles
 ```
 
 You can do this for any base folder in the dotfiles repository.
+
+## Installation via ansible
+ansible-playbook main.yml -i inventory.ini --ask-become-pass

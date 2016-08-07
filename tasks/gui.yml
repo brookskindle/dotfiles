@@ -1,0 +1,9 @@
+---
+# Install and configure the GUi for development.
+- name: Install GUI dev env
+  become: true
+  apt: name={{ item }} state=latest
+  with_items:
+    - i3
+    - rxvt
+    - uzbl

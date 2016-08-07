@@ -1,0 +1,8 @@
+---
+# Install and configure the console for development.
+- name: Install console dev environment
+  become: true
+  apt: name={{ item }} state=latest
+  with_items:
+      - vim
+      - tmux
