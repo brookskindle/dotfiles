@@ -1,8 +1,43 @@
 ---
-# Install and configure the console for development.
-- name: Install console dev environment
+# Set up console development environment
+- name: Install apt software
   become: true
   apt: name={{ item }} state=latest
   with_items:
-      - vim
-      - tmux
+    - git
+    - vim
+    - tmux
+    - python-pip
+    - python3-pip
+    - ipython
+    - ipython3
+    - virtualenvwrapper
+    - stow
+
+- name: Configure bash
+  file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/bash/.*
+
+- name: Clone FZF
+  git: repo=https://github.com/junegunn/fzf.git depth=1 dest=~/.fzf force=yes
+  run_once: true
+
+- name: Install FZF
+  shell: bash ~/.fzf/install
+  run_once: true
+
+- name: Use custom FZF dotfiles
+  file: src={{ item }} dest=~/.fzf/shell/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/fzf/.fzf/shell/*
+
+- name: Configure git
+  file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/git/.*
+
+- name: Configure tmux
+  file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/tmux/.*
