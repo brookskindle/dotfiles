@@ -1,0 +1,9 @@
+---
+# Install and configure virtual machine development servers
+- name: Install virtualbox guest additions
+  become: true
+  apt: name={{ item }} state=latest
+  with_items:
+    - virtualbox-guest-utils
+    - virtualbox-guest-x11
+    - virtualbox-guest-dkms

@@ -70,25 +70,28 @@ set ignorecase
 " Initialize Vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 " Plugins
-Plugin 'gmarik/vundle'
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'justinmk/vim-sneak'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'xero/sourcerer.vim'
-Plugin 'Haron-Prime/evening_vim'
+"Plugin 'xero/sourcerer.vim'
+"Plugin 'Haron-Prime/evening_vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 
+call vundle#end()
 " Turn filetype back on
 filetype plugin indent on
 

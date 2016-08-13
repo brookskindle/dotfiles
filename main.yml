@@ -1,0 +1,7 @@
+---
+- name: Ansible main playbook
+  hosts: virtual-workstations
+  tasks:
+    - include: tasks/console.yml
+    - include: tasks/gui.yml
+    - include: tasks/vm.yml
