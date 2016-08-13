@@ -21,6 +21,7 @@ else is welcome to try them out, however.
 Only two programs are required for installation:
 * git
 * ansible
+
 On an Ubuntu based system, you can install via:
 ```
 sudo apt-get install ansible git -y
