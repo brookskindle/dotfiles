@@ -24,7 +24,7 @@ Only two programs are required for installation:
 
 On an Ubuntu based system, you can install via:
 ```
-sudo apt-get install ansible git -y
+sudo apt-get -y install ansible git
 ```
 
 ## Installation
