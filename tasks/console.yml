@@ -13,19 +13,32 @@
     - ipython3
     - virtualenvwrapper
     - stow
+    - python-dev
+    - python3-dev
+    - build-essential
+    - cmake
+    - tig
 
 - name: Configure bash
   file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
   with_fileglob:
     - dotfiles/bash/.*
 
+- name: Check for cloned FZF repo
+  stat: path=~/.fzf
+  register: fzf_dir
+
 - name: Clone FZF
   git: repo=https://github.com/junegunn/fzf.git depth=1 dest=~/.fzf force=yes
-  run_once: true
+  when: not fzf_dir.stat.exists
+
+- name: Check for pre-installed FZF
+  stat: path=~/.fzf.bash
+  register: fzf_installed
 
 - name: Install FZF
   shell: bash ~/.fzf/install
-  run_once: true
+  when: not fzf_installed.stat.exists
 
 - name: Use custom FZF dotfiles
   file: src={{ item }} dest=~/.fzf/shell/{{ item | basename }} state=link force=yes
@@ -41,3 +54,30 @@
   file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
   with_fileglob:
     - dotfiles/tmux/.*
+
+- name: Install powerline for tmux
+  become: true
+  pip: name=powerline-status
+
+- name: Link vim config files
+  file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/vim/.*
+
+- name: Download Vundle
+  git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim force=no
+
+- name: Install vim plugins
+  shell: vim +VundleInstall +qall <<< EOF
+  args:
+    executable: /bin/bash
+
+- name: Check for pre-built YouCompleteMe
+  stat: path=~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so
+  register: ycm_built
+
+- name: Configure YouCompleteMe
+  shell: ./install.py --clang-completer
+  args:
+    chdir: ~/.vim/bundle/YouCompleteMe
+  when: not ycm_built.stat.exists
