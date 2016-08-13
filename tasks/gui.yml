@@ -1,9 +1,58 @@
 ---
-# Install and configure the GUi for development.
-- name: Install GUI dev env
+# Install and configure the GUI for development.
+- name: Install GUI software
   become: true
   apt: name={{ item }} state=latest
   with_items:
     - i3
-    - rxvt
+    - rxvt-unicode-256color
     - uzbl
+
+- name: Check existance of .i3 dir
+  stat: path=~/.i3
+  register: i3_dir
+
+- name: Ensure .i3 directory is absent
+  file: path=~/.i3 state=absent
+  when: i3_dir.stat.isdir is defined and i3_dir.stat.isdir
+
+- name: Symlink .i3 dir
+  file: src=~/dotfiles/dotfiles/i3/.i3 dest=~/.i3 state=link force=yes
+
+- name: Link i3 status
+  file: src=~/dotfiles/dotfiles/i3/.i3status.conf dest=~/.i3status.conf state=link force=yes
+
+- name: Make bin directory
+  file: path=~/bin state=directory
+
+- name: Install bin scripts
+  file: src={{ item }} dest=~/bin/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/bin/bin/*
+
+- name: Configure urxvt
+  file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/urxvt/.*
+
+- name: Check for powerline fonts repo
+  stat: path=~/fonts
+  register: powerline_fonts
+
+- name: Clone powerline fonts
+  git: repo=https://github.com/powerline/fonts.git dest=~/fonts force=yes
+  when: not powerline_fonts.stat.exists
+
+- name: Check for installed fonts
+  stat: path="/home/brooks/.local/share/fonts/DejaVu Sans Mono for Powerline.ttf"
+  register: powerline_fonts_installed
+
+- name: Install powerline fonts
+  shell: ./install.sh chdir=~/fonts
+  when: not powerline_fonts_installed.stat.exists
+
+# This is soooo hacky
+- name: Use urxvt as default shell
+  shell: update-alternatives --config x-terminal-emulator <<< 4
+  args:
+    executable: /bin/bash
