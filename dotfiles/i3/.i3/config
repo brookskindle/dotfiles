@@ -14,7 +14,7 @@
 ##	on startup	##
 ##################
 exec --no-startup-id numlockx &
-exec --no-startup-id "xrandr --output HDMI-1 --auto --primary --output DVI-D-1 --auto --right-of HDMI-1"
+#exec --no-startup-id "xrandr --output HDMI-1 --auto --primary --output DVI-D-1 --auto --right-of HDMI-1"
 exec --no-startup-id "sh ~/.fehbg"
 exec --no-startup-id nm-applet
 
@@ -39,7 +39,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+b exec x-www-browser
 
 #start the file manager
-bindsym $mod+t exec thunar
+bindsym $mod+t exec pcmanfm
 
 #lock the screen
 bindsym $mod+x exec "/home/brooks/bin/lock.sh"
