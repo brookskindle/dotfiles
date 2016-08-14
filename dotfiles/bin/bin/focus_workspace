@@ -15,8 +15,8 @@ import subprocess
 # Monitors as reported by xrandr - sorted from left to right as they appear on
 # my desk.
 MONITORS = (
-    "HDMI-0",
-    "DVI-D-0",
+    "VGA-2",
+    "VGA-1",
 )
 
 def main():

@@ -8,6 +8,8 @@
     - rxvt-unicode-256color
     - uzbl
     - feh
+    - nodejs-legacy
+    - npm
 
 - name: Check existance of .i3 dir
   stat: path=~/.i3
@@ -57,3 +59,7 @@
   shell: update-alternatives --config x-terminal-emulator <<< 4
   args:
     executable: /bin/bash
+
+- name: Install vim markdown plugin
+  become: true
+  shell: npm -g install instant-markdown-d

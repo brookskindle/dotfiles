@@ -17,6 +17,8 @@
     - build-essential
     - cmake
     - tig
+    - curl
+    - jq
 
 - name: Configure bash
   file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
