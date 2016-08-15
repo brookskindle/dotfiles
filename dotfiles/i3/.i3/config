@@ -42,7 +42,7 @@ bindsym $mod+b exec x-www-browser
 bindsym $mod+t exec pcmanfm
 
 #lock the screen
-bindsym $mod+x exec "/home/brooks/bin/lock.sh"
+bindsym $mod+x exec "/home/$(whoami)/bin/lock.sh"
 
 #bind the print screen button to taking a screenshot
 bindsym Print exec scrot

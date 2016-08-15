@@ -10,6 +10,8 @@
     - feh
     - nodejs-legacy
     - npm
+    - numlockx
+    - imagemagick
 
 - name: Check existance of .i3 dir
   stat: path=~/.i3
