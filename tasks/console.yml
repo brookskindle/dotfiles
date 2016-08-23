@@ -19,6 +19,7 @@
     - tig
     - curl
     - jq
+    - htop
 
 - name: Configure bash
   file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
