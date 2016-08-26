@@ -20,7 +20,7 @@ else is welcome to try them out, however.
 ## Pre-installation
 Only two programs are required for installation:
 * git
-* ansible
+* ansible >= 2.0
 
 On an Ubuntu based system, you can install via:
 ```
