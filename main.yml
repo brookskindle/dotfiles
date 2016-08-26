@@ -1,7 +1,15 @@
 ---
-- name: Ansible main playbook
+- name: Set up VM workstations
   hosts: virtual-workstations
   tasks:
-    - include: tasks/console.yml
-    - include: tasks/gui.yml
     - include: tasks/vm.yml
+
+- name: Set up console dev environment
+  hosts: console-workstations
+  tasks:
+    - include: tasks/console.yml
+
+- name: Set up GUI dev environment
+  hosts: graphical-workstations
+  tasks:
+    - include: tasks/gui.yml
