@@ -59,3 +59,16 @@
 - name: Install vim markdown plugin
   become: true
   shell: npm -g install instant-markdown-d
+
+- name: Symlink vimperator
+  file: src={{ item }} dest=~/{{ item | basename }} state=link force=yes
+  with_fileglob:
+    - dotfiles/vimperator/.*
+
+- name: Check for existing vimperator colors
+  stat: path=~/.vimperator/colors
+  register: vimperator_colors
+
+- name: Clone vimperator colors
+  git: repo=https://github.com/vimpr/vimperator-colors.git depth=1 dest=~/.vimperator/colors force=yes
+  when: not vimperator_colors.stat.exists
