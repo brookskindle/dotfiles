@@ -56,12 +56,6 @@
   shell: ./install.sh chdir=~/fonts
   when: not powerline_fonts_installed.stat.exists
 
-# This is soooo hacky
-- name: Use urxvt as default shell
-  shell: update-alternatives --config x-terminal-emulator <<< 4
-  args:
-    executable: /bin/bash
-
 - name: Install vim markdown plugin
   become: true
   shell: npm -g install instant-markdown-d
