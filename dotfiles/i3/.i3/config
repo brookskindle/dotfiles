@@ -13,7 +13,7 @@
 ##################
 ##	on startup	##
 ##################
-exec --no-startup-id numlockx &
+#exec --no-startup-id numlockx &
 #exec --no-startup-id "xrandr --output HDMI-1 --auto --primary --output DVI-D-1 --auto --right-of HDMI-1"
 exec --no-startup-id "sh ~/.fehbg"
 exec --no-startup-id nm-applet
@@ -112,10 +112,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Switch to left and right visible workspaces(monitors)
-# focus_workspace is a custom script that is monitor aware (see my dotfiles)
-bindsym $mod+comma exec focus_workspace left
-bindsym $mod+period exec focus_workspace right
+# Navigate to previous and next workspaces
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
 
 # Move window to left or right visible workspaces(monitors)
 bindsym $mod+shift+comma exec focus_workspace left --move
