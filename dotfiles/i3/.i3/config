@@ -13,10 +13,10 @@
 ##################
 ##	on startup	##
 ##################
-#exec --no-startup-id numlockx &
-#exec --no-startup-id "xrandr --output HDMI-1 --auto --primary --output DVI-D-1 --auto --right-of HDMI-1"
 exec --no-startup-id "sh ~/.fehbg"
 exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfsettingsd
 
 set $mod Mod4
 
@@ -39,7 +39,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+b exec x-www-browser
 
 #start the file manager
-bindsym $mod+t exec pcmanfm
+bindsym $mod+t exec thunar
 
 #lock the screen
 bindsym $mod+x exec "/home/$(whoami)/bin/lock.sh"
@@ -47,10 +47,10 @@ bindsym $mod+x exec "/home/$(whoami)/bin/lock.sh"
 #bind the print screen button to taking a screenshot
 bindsym Print exec scrot
 
-# Volume controls.
-bindsym XF86AudioRaiseVolume exec "amixer -q set Master 2dB+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -q set Master 2dB- unmute"
-bindsym XF86AudioMute exec "amixer -D pulse sset Master toggle"
+# Volume controls
+bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%-
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -103,6 +103,9 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+# Prevent rdesktop from starting in floating mode
+for_window [class="rdesktop"] floating disable
+
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -112,13 +115,13 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Navigate to previous and next workspaces
+# Navigate to previous and next workspace
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
 
-# Move window to left or right visible workspaces(monitors)
-bindsym $mod+shift+comma exec focus_workspace left --move
-bindsym $mod+shift+period exec focus_workspace right --move
+# Move window to previous or next workspace
+bindsym $mod+shift+comma move workspace prev
+bindsym $mod+shift+period move workspace next
 
 # Jump to workspace via a dmenu prompt
 bindsym $mod+n exec jump_workspace
@@ -181,8 +184,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-#bindsym $mod+Shift+e exec i3-msg exit
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
