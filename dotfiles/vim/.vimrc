@@ -174,8 +174,8 @@ nmap <C-l> <C-w>l
 " ==================== Macros ====================
 
 " Python debug macros
-let @p = 'Oimport pdb; pdb.set_trace()'
-let @o = 'Ofrom nose.tools import set_trace; set_trace()'
+let @p = 'Oimport ipdb; ipdb.set_trace()'
+let @o = 'Oimport pytest; pytest.set_trace()'
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================
