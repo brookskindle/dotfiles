@@ -18,16 +18,18 @@ TEMP=${TEMP%.*}
 NIGHT=$(echo $WEATHER | cut -d " " -f1)
 shopt -s nocasematch
 case $WEATHER in
-    *fog* | *mist*) echo -ne '\uf070';;
+    *fog* | *mist*) echo -ne '♨';;  # hot springs
     *storm*) echo -ne '☇';;  # lightning
-    *rain* | *drizzle*) echo -ne '☂';;  # umbrella
+    *rain* | *drizzle*) echo -ne '☔';;  # umbrella w/ rain
     *cloud*) echo -ne '☁';;  # cloud
-    *snow*) echo -ne '☃';;  # snowman
+    *snow*) echo -ne '❄';;  # snowflake
     *sun* | *clear*)
         if [ "$NIGHT" == "night" ]; then
             echo -ne '☾'  # moon
         else
-            echo -ne '☼'  # sun
+            echo -ne '☀'  # sun
         fi;;
 esac
-echo -n " $WEATHER, $(($TEMP-273))°C"
+CELSIUS=$(($TEMP-273))
+FAHRENHEIT=$(python3 -c 'print(round(float(input())*1.8+32))' <<< $CELSIUS)
+echo -n " $WEATHER, $FAHRENHEIT°F"
