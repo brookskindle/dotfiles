@@ -107,8 +107,6 @@ bindsym $mod+r mode "resize"
 # Display workspace status bar
 bar {
   status_command i3blocks
-  position top
-  strip_workspace_numbers yes
 }
 client.focused #4c7899 #285577 #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
