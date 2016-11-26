@@ -74,11 +74,11 @@ bindsym $mod+period workspace next
 bindsym $mod+shift+comma move workspace prev
 bindsym $mod+shift+period move workspace next
 
-# Jump to workspace via a dmenu prompt
-bindsym $mod+n exec jump_workspace
+# Jump to a workspace or window
+bindsym $mod+n exec $HOME/.i3/scripts/focus.sh
 
 # Rename the current workspace
-bindsym $mod+m exec rename_workspace
+bindsym $mod+m exec $HOME/.i3/scripts/rename.sh
 
 # Switch to the last workspace used
 bindsym $mod+apostrophe workspace back_and_forth

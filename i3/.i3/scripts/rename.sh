@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# Opens dmenu up to select the workspace you want to jump to
+# Rename a workspace interactively through rofi
 NAME=$(echo -n "" | rofi -dmenu -p "Rename workspace to:")
 i3-msg rename workspace to "$NAME"
