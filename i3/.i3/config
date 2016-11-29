@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles and status bar (unless another font is specified in
 # the bar {} block below.
-font pango:FontAwesome 10
+font pango:FontAwesome 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -107,6 +107,7 @@ bindsym $mod+r mode "resize"
 # Display workspace status bar
 bar {
   status_command i3blocks
+  font pango:FontAwesome 10
 }
 client.focused #4c7899 #285577 #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
