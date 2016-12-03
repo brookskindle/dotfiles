@@ -126,8 +126,9 @@ stty -ixon
 # dircolors -p > ~/.dircolors'
 eval $(dircolors -b ~/.dircolors)
 
-# Urxvt sets TEMPDIR and not TMPDIR. Tmux expects TMPDIR to determine where to
-# store the default socket (see man tmux).
+export TEMPDIR=/tmp
+# Tmux expects TMPDIR to determine where to store the default socket (see man
+# tmux).
 export TMPDIR=$TEMPDIR
 
 # Use fzf for awesome fuzzy completion!
@@ -151,3 +152,6 @@ fi
 if [ -f ~/.sensible.bash ]; then
     source ~/.sensible.bash
 fi
+
+# Use rvm (https://rvm.io/) to manage ruby environments
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
