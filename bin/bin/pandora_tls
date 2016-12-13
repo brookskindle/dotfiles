@@ -2,5 +2,12 @@
 
 # Obtains the TLS fingerprint for Pandora. Useful for updating pianobar config.
 # from https://gist.github.com/r35krag0th/4173333
-openssl s_client -connect tuner.pandora.com:443 < /dev/null 2> /dev/null | \
-    openssl x509 -noout -fingerprint | tr -d ':' | cut -d'=' -f2
+tls=$(openssl s_client -connect tuner.pandora.com:443 < /dev/null 2> /dev/null | \
+    openssl x509 -noout -fingerprint | tr -d ':' | cut -d'=' -f2)
+echo $tls
+if [ "$1" == "-u" ]
+    then
+        echo "Updating pianobar config with new TLS fingerprint"
+        sedstr="/tls_fingerprint/c\tls_fingerprint = $tls"
+        sed -i "$sedstr" ~/.config/pianobar/config
+fi
