@@ -1,4 +1,5 @@
 #!/bin/bash
 
-# Use rofi to select either a workspace or window to focus
-rofi -combi-modi workspace:$HOME/.i3/scripts/i3_switch_workspaces.sh,window -show combi -switchers combi
+# Opens dmenu up to select the workspace you want to jump to
+DEST=$(i3-msg -t get_workspaces | python -c 'import sys,json; inp=sys.stdin.read().strip();jinp = json.loads(inp); print "\n".join([e["name"] for e in jinp])' | rofi -dmenu -p "Select your workspace:")
+i3-msg workspace $DEST
