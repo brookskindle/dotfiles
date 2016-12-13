@@ -25,6 +25,7 @@ bindsym $mod+x exec "$HOME/bin/lock.sh"
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%-
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+
+bindsym XF86Display exec xfce4-display-settings
 bindsym --release Print exec scrot -s
 bindsym --release Shift+Print exec scrot
 bindsym $mod+d exec rofi -show run
