@@ -40,6 +40,10 @@ bindsym F7 exec xfce4-display-settings
 
 # Kill focused window
 bindsym $mod+Shift+q kill
+#
+# Hide/show floating scratchpad
+bindsym $mod+minus scratchpad show
+bindsym $mod+shift+minus move scratchpad
 
 # Move around windows in a vim-like fashion
 bindsym $mod+h focus left
