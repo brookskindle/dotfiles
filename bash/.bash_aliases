@@ -18,3 +18,6 @@ alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null"
 
 # Format Json output
 alias pjs="python -m json.tool"
+
+# Asciinema
+alias asciinema="python3 -m asciinema"
