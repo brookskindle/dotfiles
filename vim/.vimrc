@@ -33,9 +33,6 @@ set ruler
 " Show line numbers on the left side of the screen
 set number
 
-" Get rid of omnicomplete doc preview
-"set completeopt=menu
-
 " Use filetype-specific plugins and indentation
 set nosmartindent
 
@@ -72,20 +69,16 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugins
 " Let Vundle manage Vundle, required
+" https://github.com/VundleVim/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'justinmk/vim-sneak'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'xero/sourcerer.vim'
-"Plugin 'Haron-Prime/evening_vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/syntastic'
@@ -138,8 +131,6 @@ let g:fzf_action = {
 " ============= Custom Key Bindings ==============
 
 """""keymappings for plugins"""""
-nnoremap tt :TagbarOpenAutoClose<CR>
-"nnoremap <tab><tab> :NERDTreeToggle<CR>
 nnoremap <C-f> :GitFiles<CR>
 
 " Move up/down a line visually regardless of the length of the line.
@@ -162,13 +153,6 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" Replace f with sneak
-"nmap f <Plug>Sneak_s
-"nmap F <Plug>Sneak_S
-"xmap f <Plug>Sneak_s
-"xmap F <Plug>Sneak_S
-"omap f <Plug>Sneak_s
-"omap F <Plug>Sneak_S
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Macros ====================
