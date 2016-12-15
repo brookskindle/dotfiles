@@ -102,14 +102,18 @@ let g:ycm_confirm_extra_conf = 0
 let g:syntastic_always_populate_loc_list=1
 
 " Use syntastic for flake8
-let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['pylint']
+
+" Only run syntastic checks when calling :SyntasticCheck.
+" This prevents a long load/save time when viewing large python files.
+" See :help syntastic-commands for more info.
+let g:syntastic_mode_map = {"mode": "passive"}
 
 "let YouCompleteMe use the system installation of python
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 "use python for syntax checking
-"let g:syntastic_python_python_exec = 'python'
+let g:syntastic_python_python_exec = 'python'
 
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
@@ -175,3 +179,7 @@ hi ColorColumn ctermbg=4
 " Use syntax highlighting and color scheme
 syntax enable
 colorscheme monokain
+
+" Highlight trailing whitespaces and tabs
+highlight ExtraWhitespace ctermbg=red
+match ExtraWhitespace /\s\+$/
