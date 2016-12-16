@@ -8,6 +8,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfsettingsd
 exec --no-startup-id compton -CG
+exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 
 # Use Super (Windows) key as mod key
 set $mod Mod4

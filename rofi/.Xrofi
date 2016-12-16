@@ -1,0 +1,23 @@
+! Configuration for rofi: https://davedavenport.github.io/rofi/
+! Rofi will not automatically detect this config file. It must be merged with
+! the other X resources.
+! running `xrdb -merge <this_file>` seems to do the trick
+
+! -----------------------------------------------------------------------------
+! Keybindings
+! -----------------------------------------------------------------------------
+rofi.kb-cancel: Escape,Control+c
+rofi.kb-remove-word-back: Control+w
+
+! -----------------------------------------------------------------------------
+! ROFI Android Notification Color theme
+! https://github.com/DaveDavenport/rofi-themes
+! -----------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+
+! With rofi v0.15.7, only one color can be specified with color-window, even
+! though the man page says it should contain two.
+rofi.color-window: #273238
