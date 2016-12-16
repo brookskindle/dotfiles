@@ -34,13 +34,13 @@ bindsym F10 exec amixer -D pulse sset Master toggle
 bindsym F11 exec amixer -D pulse sset Master 3%-
 bindsym F12 exec amixer -D pulse sset Master 3%+
 
-# Monitor config
-bindsym XF86Display exec xfce4-display-settings
-bindsym F7 exec xfce4-display-settings
+# Monitor config (re-apply wallpaper afterwards, it usually gets messed up)
+bindsym XF86Display exec xfce4-display-settings && sh ~/.fehbg
+bindsym F7 exec xfce4-display-settings && sh ~/.fehbg
 
 # Kill focused window
 bindsym $mod+Shift+q kill
-#
+
 # Hide/show floating scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+shift+minus move scratchpad
