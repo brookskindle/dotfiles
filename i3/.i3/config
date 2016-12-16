@@ -7,6 +7,7 @@ exec --no-startup-id "sh ~/.fehbg"
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfsettingsd
+exec --no-startup-id compton -CG
 
 # Use Super (Windows) key as mod key
 set $mod Mod4
