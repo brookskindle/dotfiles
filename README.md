@@ -17,7 +17,7 @@ these dotfiles. I'm not apologizing for that, sorry.
 * ipdb
 * tmux
 * powerline
-* urxvt
+* terminator
 * vim
 
 ### Window manager
