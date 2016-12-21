@@ -26,9 +26,9 @@ if __name__ == "__main__":
     print(output)
 
     # What color should the output be?
-    green = colour.Color("blue")
+    blue = colour.Color("blue")
     red = colour.Color("red")
     # Trip point is 128 degrees celsius
-    colors = list(red.range_to(green, steps=129))
+    colors = list(blue.range_to(red, steps=129))
     color = colors[temp].get_hex()
     print(color)
