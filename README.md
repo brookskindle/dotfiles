@@ -28,6 +28,10 @@ these dotfiles. I'm not apologizing for that, sorry.
 * acpi
 * [rofi](https://davedavenport.github.io/rofi/)
 
+### Media
+* mpd
+* sonata/ncmpcpp
+
 ## Styling Advice
 A [neat
 trick](https://www.reddit.com/r/unixporn/comments/5dq79a/how_to_create_a_pallet_from_your_wallpaper/)
@@ -35,5 +39,8 @@ I found on reddit to help style colors based on your wallpaper. To generate
 colors similar to your wallpaper:
 
 1. Load wallpaper into gimp
-1. Select image->mode->indexed, then generate
+1. Select `image->mode->indexed`, then generate
 1. Open windows->dockable dialogs->colormap
+
+Alternatively, use `gpick` and generate the same thing under
+`Tools->Palette from image`
