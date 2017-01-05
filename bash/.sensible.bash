@@ -6,7 +6,7 @@
 ## GENERAL OPTIONS ##
 
 # Prevent file overwrite on stdout redirection
-set -o noclobber
+#set -o noclobber
 
 # Update window size after every command
 shopt -s checkwinsize

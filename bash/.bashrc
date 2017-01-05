@@ -122,7 +122,7 @@ fi
 stty -ixon
 
 # Manually set dir colors (nfs dirs are impossible to read by default)
-# If you don't have a dircolors file, create it with 
+# If you don't have a dircolors file, create it with
 # dircolors -p > ~/.dircolors'
 eval $(dircolors -b ~/.dircolors)
 
