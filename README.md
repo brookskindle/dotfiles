@@ -20,6 +20,7 @@ these dotfiles. I'm not apologizing for that, sorry.
 * terminator
 * vim
 * jq
+* virtualenvwrapper
 * curl
 * python-pip
 * python3-pip
