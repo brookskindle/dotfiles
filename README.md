@@ -40,6 +40,22 @@ these dotfiles. I'm not apologizing for that, sorry.
 * sonata/ncmpcpp
 
 ## Styling Advice
+### Bootloader
+The plymouth bootloader is the default bootloader for Xubuntu. I chose to
+modify the background of the loading screen, but you can also change the
+loading text as well.
+
+1. Modify files to your heart's content in
+   `/usr/share/plymouth/themes/xubuntu-logo/`
+1. Run `sudo update-initramfs -u` to make the changes permanent
+
+### Login Screen
+I've edited my login screen wallpaper, but there are a few other things you can
+tweak as well. You can either directly edit
+`/etc/lightdm/lightdm-gtk-greeter.conf` or you can run
+`lightdm-gtk-greeter-settings` to edit it graphically.
+
+### Window Manager
 A [neat
 trick](https://www.reddit.com/r/unixporn/comments/5dq79a/how_to_create_a_pallet_from_your_wallpaper/)
 I found on reddit to help style colors based on your wallpaper. To generate
