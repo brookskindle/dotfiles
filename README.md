@@ -19,11 +19,17 @@ these dotfiles. I'm not apologizing for that, sorry.
 * powerline
 * terminator
 * vim
+* jq
+* curl
+* python-pip
+* python3-pip
 
 ### Window manager
 * [i3](https://i3wm.org)
 * [i3blocks](https://github.com/vivien/i3blocks)
 * imagemagick
+* fonts-font-awesome
+* feh
 * scrot
 * acpi
 * [rofi](https://davedavenport.github.io/rofi/)
