@@ -161,9 +161,8 @@ nmap <C-l> <C-w>l
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Macros ====================
 
-" Python debug macros
+" Quickly add a python debug statement above the current line
 let @p = 'Oimport ipdb; ipdb.set_trace()'
-let @o = 'Oimport pytest; pytest.set_trace()'
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Colors ====================
