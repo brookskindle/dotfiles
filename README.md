@@ -15,6 +15,7 @@ these dotfiles. I'm not apologizing for that, sorry.
 * tig
 * [fzf](https://github.com/junegunn/fzf)
 * ipdb
+* stow
 * tmux
 * powerline
 * terminator
