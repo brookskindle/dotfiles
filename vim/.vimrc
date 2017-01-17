@@ -38,6 +38,7 @@ set nosmartindent
 
 " Turn off automatic line breaking in html and css
 au BufRead,BufNewFile *.html,*.css set textwidth=0
+au BufRead,BufNewFile *.html set filetype=htmldjango
 
 " Use two-space tabs for javascript
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
@@ -122,6 +123,7 @@ let g:airline_powerline_fonts = 1
 let g:sneak#use_ic_scs = 1
 
 " Prevent instant markdown viewer on startup
+" The viewer can be invoked via :InstantMarkdownPreview
 let g:instant_markdown_autostart = 0
 
 " This is the default extra key bindings
