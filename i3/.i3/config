@@ -24,9 +24,10 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+b exec x-www-browser
 bindsym $mod+t exec thunar
-bindsym $mod+x exec "$HOME/bin/lock.sh"
+bindsym $mod+x exec "~/bin/lock.sh"
 bindsym --release Print exec xfce4-screenshooter
 bindsym $mod+d exec rofi -show run
+bindsym $mod+slash exec rofi -show window
 
 # Volume controls
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
@@ -90,10 +91,10 @@ bindsym $mod+shift+comma move workspace prev
 bindsym $mod+shift+period move workspace next
 
 # Jump to a workspace or window
-bindsym $mod+n exec $HOME/.i3/scripts/focus.sh
+bindsym $mod+n exec ~/.i3/scripts/focus.sh
 
 # Rename the current workspace
-bindsym $mod+m exec $HOME/.i3/scripts/rename.sh
+bindsym $mod+m exec ~/.i3/scripts/rename.sh
 
 # Switch to the last workspace used
 bindsym $mod+apostrophe workspace back_and_forth
