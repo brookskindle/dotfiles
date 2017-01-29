@@ -168,3 +168,9 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# If there are additional .bash scripts, let's make sure to source them.
+for f in ~/.bash.d/.*
+do
+    [ -f $f ] && source $f
+done
