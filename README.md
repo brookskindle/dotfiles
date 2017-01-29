@@ -36,6 +36,12 @@ these dotfiles. I'm not apologizing for that, sorry.
 * acpi
 * [rofi](https://davedavenport.github.io/rofi/)
 
+#### Lock Screen
+By default, Xubuntu uses `xflock4` as its default lock screen manager. I prefer
+my own lock screen script. I copy it to `/usr/local/bin/xflock4` so that my
+lock screen script is used in place of the actual `xflock4` program. Solution
+taken from [here](https://ubuntuforums.org/showthread.php?t=1107843).
+
 ### Media
 * mpd
 * sonata/ncmpcpp
