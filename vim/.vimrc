@@ -74,16 +74,19 @@ call vundle#begin()
 " https://github.com/VundleVim/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-sensible'
-Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
+" Development Environment
 Plugin 'justinmk/vim-sneak'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'w0rp/ale'
+Plugin 'fisadev/vim-isort'
+
+" Beautification
+Plugin 'bling/vim-bufferline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 " Turn filetype back on
@@ -92,29 +95,6 @@ filetype plugin indent on
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " =============== Plugin Settings ================
-
-"set a global YouCompleteMe config file for syntax checking
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
-"turn off confirmation of ycm_extra_conf
-let g:ycm_confirm_extra_conf = 0
-
-"let syntastic populate errors messages wthin lists
-let g:syntastic_always_populate_loc_list=1
-
-" Use syntastic for flake8
-let g:syntastic_python_checkers=['pylint']
-
-" Only run syntastic checks when calling :SyntasticCheck.
-" This prevents a long load/save time when viewing large python files.
-" See :help syntastic-commands for more info.
-let g:syntastic_mode_map = {"mode": "passive"}
-
-"let YouCompleteMe use the system installation of python
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-
-"use python for syntax checking
-let g:syntastic_python_python_exec = 'python'
 
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
@@ -131,6 +111,14 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-o': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+" Prevent Jedi from opening up a completion window when autocompleting
+autocmd FileType python setlocal completeopt-=preview
+
+" Only run ALE when files are saved
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
