@@ -172,3 +172,6 @@ colorscheme monokain
 " Highlight trailing whitespaces and tabs
 highlight ExtraWhitespace ctermbg=red
 match ExtraWhitespace /\s\+$/
+
+" Remove tailing whitespaces and tabs on every line
+command TrimWhitespace :%s/\s\+$//
