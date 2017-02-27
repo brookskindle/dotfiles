@@ -10,3 +10,8 @@
 	prompt = false
 [push]
 	default = simple
+[alias]
+    # Grep over the entire repository, regardless of current working directory
+    # Shell commands (!) are always run at the top level directory
+    # http://stackoverflow.com/a/10868614
+    rgrep = !git grep

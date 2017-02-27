@@ -43,6 +43,9 @@ au BufRead,BufNewFile *.html set filetype=htmldjango
 " Use two-space tabs for javascript
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
+" Use two-space tabs for ruby
+autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
 " Ignore compiled python
 set wildignore+=*.pyc
 
