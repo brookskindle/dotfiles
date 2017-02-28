@@ -45,6 +45,7 @@ autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Use two-space tabs for ruby
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Ignore compiled python
 set wildignore+=*.pyc
@@ -118,8 +119,9 @@ let g:fzf_action = {
 " Prevent Jedi from opening up a completion window when autocompleting
 autocmd FileType python setlocal completeopt-=preview
 
-" Only run ALE when files are saved
-let g:ale_lint_on_save = 1
+" Prevent ALE from running automatically. It can be manually called via
+" :AleLint. See https://github.com/w0rp/ale/issues/288 for more information.
+let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 
@@ -154,7 +156,8 @@ nmap <C-l> <C-w>l
 " """"""""""""""""""""""""""""""""""""""""""""""""
 " ==================== Macros ====================
 
-" Quickly add a python debug statement above the current line
+" Quickly add a python debug statement above the current line by pressing @p
+" while in normal mode
 let @p = 'Oimport ipdb; ipdb.set_trace()'
 
 " """"""""""""""""""""""""""""""""""""""""""""""""
