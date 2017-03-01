@@ -1,73 +1,9 @@
-" Inspired by https://github.com/alanctkc/dotfiles
-
-" """"""""""""""""""""""""""""""""""""""""""""""""
-" =============== General Settings ===============
-
-" vIM
-set nocompatible
-
-" Allow per-directory vimrc
-set exrc
-set secure
-
-" Automatically expand tabs into spaces
-set expandtab
-
-" Tabs are four spaces
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-
-" Use expected backspace behavior
-set backspace=indent,eol,start
-
-" Turn on search highlighting
-set hls
-
-" Allow switching between buffers without saving first
-set hidden
-
-" Display position coordinates in bottom right
-set ruler
-
-" Show line numbers on the left side of the screen
-set number
-
-" Use filetype-specific plugins and indentation
-set nosmartindent
-
-" Turn off automatic line breaking in html and css
-au BufRead,BufNewFile *.html,*.css set textwidth=0
-au BufRead,BufNewFile *.html set filetype=htmldjango
-
-" Use two-space tabs for javascript
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
-
-" Use two-space tabs for ruby
-autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
-
-" Ignore compiled python
-set wildignore+=*.pyc
-
-" Ignore object files
-set wildignore+=*.o
-
-" Incrementally search for matches
-set incsearch
-
-" Wrap text to next line if over the text limit
-set textwidth=79
-
-" Always show the status line
-set laststatus=2
-
-" Ignore the case of matches
-set ignorecase
-
-
-" """"""""""""""""""""""""""""""""""""""""""""""""
-" =============== Plugin Mangement ===============
+"  ____  _             _
+" |  _ \| |_   _  __ _(_)_ __  ___
+" | |_) | | | | |/ _` | | '_ \/ __|
+" |  __/| | |_| | (_| | | | | \__ \
+" |_|   |_|\__,_|\__, |_|_| |_|___/
+"                |___/
 
 " Initialize Vundle
 filetype off
@@ -96,9 +32,12 @@ call vundle#end()
 " Turn filetype back on
 filetype plugin indent on
 
-
-" """"""""""""""""""""""""""""""""""""""""""""""""
-" =============== Plugin Settings ================
+"  ____  _             _          ____             __ _
+" |  _ \| |_   _  __ _(_)_ __    / ___|___  _ __  / _(_) __ _
+" | |_) | | | | |/ _` | | '_ \  | |   / _ \| '_ \| |_| |/ _` |
+" |  __/| | |_| | (_| | | | | | | |__| (_) | | | |  _| | (_| |
+" |_|   |_|\__,_|\__, |_|_| |_|  \____\___/|_| |_|_| |_|\__, |
+"                |___/                                  |___/
 
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
@@ -125,9 +64,85 @@ let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 
+"   ____ _       _           _   ____       _   _   _
+"  / ___| | ___ | |__   __ _| | / ___|  ___| |_| |_(_)_ __   __ _ ___
+" | |  _| |/ _ \| '_ \ / _` | | \___ \ / _ \ __| __| | '_ \ / _` / __|
+" | |_| | | (_) | |_) | (_| | |  ___) |  __/ |_| |_| | | | | (_| \__ \
+"  \____|_|\___/|_.__/ \__,_|_| |____/ \___|\__|\__|_|_| |_|\__, |___/
+"                                                           |___/
 
-" """"""""""""""""""""""""""""""""""""""""""""""""
-" ============= Custom Key Bindings ==============
+" vIM
+set nocompatible
+
+" Allow per-directory vimrc
+set exrc
+set secure
+
+" Unless otherwise specified, expand tabs to spaces and use four space tabs
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+" Use expected backspace behavior
+set backspace=indent,eol,start
+
+" Turn on search highlighting
+set hls
+
+" Allow switching between buffers without saving first
+set hidden
+
+" Display position coordinates in bottom right
+set ruler
+
+" Show line numbers on the left side of the screen
+set number
+
+" Use filetype-specific plugins and indentation
+set nosmartindent
+
+" Ignore compiled python
+set wildignore+=*.pyc
+
+" Ignore object files
+set wildignore+=*.o
+
+" Incrementally search for matches
+set incsearch
+
+" Wrap text to next line if over the text limit
+set textwidth=79
+
+" Always show the status line
+set laststatus=2
+
+" Ignore the case of matches
+set ignorecase
+
+"  _
+" | |    __ _ _ __   __ _ _   _  __ _  __ _  ___  ___
+" | |   / _` | '_ \ / _` | | | |/ _` |/ _` |/ _ \/ __|
+" | |__| (_| | | | | (_| | |_| | (_| | (_| |  __/\__ \
+" |_____\__,_|_| |_|\__, |\__,_|\__,_|\__, |\___||___/
+"                   |___/             |___/
+
+au BufRead,BufNewFile *.html,*.css setlocal textwidth=0
+au BufRead,BufNewFile *.html setlocal filetype=htmldjango
+
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
+
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
+autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
+"  _  __            ____  _           _ _
+" | |/ /___ _   _  | __ )(_)_ __   __| (_)_ __   __ _ ___
+" | ' // _ \ | | | |  _ \| | '_ \ / _` | | '_ \ / _` / __|
+" | . \  __/ |_| | | |_) | | | | | (_| | | | | | (_| \__ \
+" |_|\_\___|\__, | |____/|_|_| |_|\__,_|_|_| |_|\__, |___/
+"           |___/                               |___/
 
 """""keymappings for plugins"""""
 nnoremap <C-f> :GitFiles<CR>
@@ -152,16 +167,19 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-
-" """"""""""""""""""""""""""""""""""""""""""""""""
-" ==================== Macros ====================
-
 " Quickly add a python debug statement above the current line by pressing @p
 " while in normal mode
 let @p = 'Oimport ipdb; ipdb.set_trace()'
 
-" """"""""""""""""""""""""""""""""""""""""""""""""
-" ==================== Colors ====================
+" Remove tailing whitespaces and tabs on every line
+command TrimWhitespace :%s/\s\+$//
+
+"   ____      _
+"  / ___|___ | | ___  _ __ ___
+" | |   / _ \| |/ _ \| '__/ __|
+" | |__| (_) | | (_) | |  \__ \
+"  \____\___/|_|\___/|_|  |___/
+"
 
 " Use 256 colors in color schemes
 set t_Co=256
@@ -178,6 +196,3 @@ colorscheme monokain
 " Highlight trailing whitespaces and tabs
 highlight ExtraWhitespace ctermbg=red
 match ExtraWhitespace /\s\+$/
-
-" Remove tailing whitespaces and tabs on every line
-command TrimWhitespace :%s/\s\+$//
