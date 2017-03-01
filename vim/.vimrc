@@ -144,7 +144,7 @@ autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
 " |_|\_\___|\__, | |____/|_|_| |_|\__,_|_|_| |_|\__, |___/
 "           |___/                               |___/
 
-"""""keymappings for plugins"""""
+" Use Ctrl+F to fuzzy search for files in the current git project (from FZF)
 nnoremap <C-f> :GitFiles<CR>
 
 " Move up/down a line visually regardless of the length of the line.
