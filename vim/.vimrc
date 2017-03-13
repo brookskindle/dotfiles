@@ -127,11 +127,12 @@ set ignorecase
 " |_____\__,_|_| |_|\__, |\__,_|\__,_|\__, |\___||___/
 "                   |___/             |___/
 
-au BufRead,BufNewFile *.html,*.css setlocal textwidth=0
 au BufRead,BufNewFile *.html setlocal filetype=htmldjango
 
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
+autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
