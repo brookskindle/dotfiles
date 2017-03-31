@@ -35,7 +35,9 @@ bindsym $mod+t exec thunar
 bindsym $mod+x exec "~/bin/lock.sh"
 bindsym --release Print exec xfce4-screenshooter
 bindsym $mod+d exec rofi -show run
-bindsym $mod+slash exec rofi -show window
+#bindsym $mod+slash exec rofi -show window
+# Show/hide xpad (a note taking program)
+bindsym $mod+slash exec "(pgrep xpad && xpad -q) || xpad"
 
 # Volume controls
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
@@ -85,6 +87,7 @@ bindsym $mod+Shift+space floating toggle
 
 # Prevent rdesktop from starting in floating mode
 for_window [class="rdesktop"] floating disable
+for_window [class="xpad"] floating enable
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
