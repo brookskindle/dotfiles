@@ -174,3 +174,6 @@ for f in ~/.bash.d/.*
 do
     [ -f $f ] && source $f
 done
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
