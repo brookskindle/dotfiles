@@ -1,0 +1,4 @@
+#!/bin/bash
+# Monitor reset script
+# Last minute resort to reset displays to laptop only
+xrandr --output eDP1 --auto
