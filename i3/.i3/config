@@ -85,7 +85,6 @@ bindsym $mod+Shift+space floating toggle
 
 # Prevent rdesktop from starting in floating mode
 for_window [class="rdesktop"] floating disable
-for_window [class="xpad"] floating enable
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
