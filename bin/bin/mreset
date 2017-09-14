@@ -1,4 +1,6 @@
 #!/bin/bash
 # Monitor reset script
-# Last minute resort to reset displays to laptop only
+# Sometimes I forget to turn my laptop screen back on after unplugging an
+# external monitor, leaving me without a working monitor. This script is a last
+# resort that turns on the laptop screen
 xrandr --output eDP1 --auto
