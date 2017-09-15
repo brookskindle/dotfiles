@@ -1,4 +1,2 @@
 # Thanks to http://stackoverflow.com/a/32096090
-import os
-
-alias die os.system("kill -9 {}".format(os.getpid()))
+alias die import os;os.system("kill -9 {}".format(os.getpid()))
