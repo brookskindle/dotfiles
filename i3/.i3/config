@@ -4,6 +4,9 @@
 #
 # Want to know what a key is named? Use 'xev' to find out.
 
+# Use Super (Windows) key as mod key
+set $mod Mod4
+
 #  ____  _             _                 ____            _       _
 # / ___|| |_ __ _ _ __| |_ _   _ _ __   / ___|  ___ _ __(_)_ __ | |_ ___
 # \___ \| __/ _` | '__| __| | | | '_ \  \___ \ / __| '__| | '_ \| __/ __|
@@ -14,14 +17,14 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfsettingsd
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
-exec --no-startup-id numlockx &
-exec --no-startup-id "sh ~/.fehbg"
+# numlockx doesn't work when keyboard is plugged in. Wait a few seconds before
+# turning on numlock.
+exec --no-startup-id "sleep 3 && numlockx &"
+exec --no-startup-id "sh ~/.fehbg" # set wallpaper
 # Start mpd as a normal user - requires that mpd be disabled as a daemon
 # See http://unix.stackexchange.com/a/269329 for more info on this.
 exec --no-startup-id mpd
 
-# Use Super (Windows) key as mod key
-set $mod Mod4
 #   ____
 #  / ___| __ _ _ __  ___
 # | |  _ / _` | '_ \/ __|
@@ -126,7 +129,7 @@ bindsym $mod+v split h
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# Change container layout (stacked, tabbed, toggle next
+# Change container layout (stacked, tabbed, toggle next)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -174,8 +177,7 @@ mode "resize" {
         bindsym Shift+l resize shrink width 2 px or 2 ppt
         bindsym Shift+h resize grow width 2 px or 2 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+        bindsym Ctrl+c mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -184,7 +186,11 @@ bar {
   status_command i3blocks
   font pango:FontAwesome 10
 }
-client.focused #4c7899 #285577 #ffffff #2e9ef4
+
+# https://i3wm.org/docs/userguide.html#_changing_colors
+# class                 border  backgr. text    indicator child_border
+#client.focused 			#4c7899 #285577 #ffffff #2e9ef4
+client.focused 			#4c7899 #3cd6b7 #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused #333333 #222222 #888888 #292d2e
-client.urgent #2f343a #900000 #ffffff #900000
+client.unfocused		#333333 #222222 #888888 #292d2e
+client.urgent			#2f343a #900000 #ffffff #900000
