@@ -120,6 +120,8 @@ set laststatus=2
 
 " Ignore the case of matches
 set ignorecase
+" Unless you explicitly use an uppercase character
+set smartcase
 
 "  _
 " | |    __ _ _ __   __ _ _   _  __ _  __ _  ___  ___
