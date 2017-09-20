@@ -193,6 +193,7 @@ bindsym $mod+r mode "resize"
 
 # Display workspace status bar
 bar {
+  position top
   status_command i3blocks
   font pango:FontAwesome 10
 }
