@@ -97,8 +97,8 @@ bindsym --release Print exec xfce4-screenshooter
 bindsym $mod+d exec rofi -show run
 # When focusing outputs left and right will loop, enabling you to cycle through
 # all your outputs with a single keybind.
-bindsym $mod+slash exec i3-msg focus output left
-bindsym $mod+shift+slash exec i3-msg move workspace to output left
+bindsym $mod+semicolon exec i3-msg focus output left
+bindsym $mod+shift+semicolon exec i3-msg move workspace to output left
 
 # Volume controls
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
