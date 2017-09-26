@@ -95,6 +95,7 @@ bindsym $mod+t exec thunar
 bindsym $mod+x exec "~/bin/lock.sh"
 bindsym --release Print exec xfce4-screenshooter
 bindsym $mod+d exec rofi -show run
+bindsym $mod+slash exec rofi -show window
 # When focusing outputs left and right will loop, enabling you to cycle through
 # all your outputs with a single keybind.
 bindsym $mod+semicolon exec i3-msg focus output left
