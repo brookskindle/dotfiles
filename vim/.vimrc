@@ -58,6 +58,8 @@ let g:fzf_action = {
 
 " Prevent Jedi from opening up a completion window when autocompleting
 autocmd FileType python setlocal completeopt-=preview
+" Prevent Jedi from popping up function signatures when typing
+let g:jedi#show_call_signatures=0
 
 " Prevent ALE from running automatically. It can be manually called via
 " :AleLint. See https://github.com/w0rp/ale/issues/288 for more information.
