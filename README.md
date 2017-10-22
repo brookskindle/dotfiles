@@ -61,6 +61,7 @@ I've edited my login screen wallpaper, but there are a few other things you can
 tweak as well. You can either directly edit
 `/etc/lightdm/lightdm-gtk-greeter.conf` or you can run
 `lightdm-gtk-greeter-settings` to edit it graphically.
+This [stack overflow answer](https://askubuntu.com/a/868899) can help.
 
 ### Window Manager
 A [neat
