@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# A simple script that starts up a jupyter server if not running, or opens the
+# browser if one is already running
+
+tmux has-session -t jupyter 1>/dev/null 2>&1
+returncode=$?
+
+if [ $returncode -ne 0 ]; then
+    echo jupyter is not running
+    tmux new-session -d -s "jupyter" -c ~
+    # Want jupyter to open in a new window?
+    # https://ga7g08.github.io/2015/01/09/ipython-notebook-new-window/
+    tmux send-keys 'workon jupyter && jupyter-notebook' 'C-m'
+else
+    echo jupyter is already running, starting web browser
+    x-www-browser http://localhost:8888 --new-window
+fi
