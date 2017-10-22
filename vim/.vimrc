@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Development Environment
 Plugin 'justinmk/vim-sneak'
+Plugin 'tpope/vim-commentary'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'suan/vim-instant-markdown'
