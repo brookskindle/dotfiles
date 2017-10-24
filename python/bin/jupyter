@@ -12,6 +12,7 @@ if [ $returncode -ne 0 ]; then
     # Want jupyter to open in a new window?
     # https://ga7g08.github.io/2015/01/09/ipython-notebook-new-window/
     tmux send-keys 'workon jupyter && jupyter-notebook' 'C-m'
+    tmux rename-window "jupyter"
 else
     echo jupyter is already running, starting web browser
     x-www-browser http://localhost:8888 --new-window
