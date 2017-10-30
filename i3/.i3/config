@@ -85,7 +85,7 @@ mode "$mode_gaps_outer" {
 # the bar {} block below.
 font pango:FontAwesome 9
 
-# Add FontAwesome icons to several often-used programs
+# Add FontAwesome icons to the tielbars of several often-used programs
 for_window [class="Chromium-browser"] title_format " %title"
 for_window [class="X-terminal-emulator"] title_format " %title"
 for_window [class="Thunar"] title_format " %title"
@@ -94,6 +94,7 @@ for_window [class="Steam"] title_format " %title"
 for_window [class="Gimp"] title_format " %title"
 for_window [class="VirtualBox"] title_format " %title"
 for_window [class="libreoffice.*"] title_format " %title"
+for_window [class="Evince"] title_format " %title"
 
 # Use $mod+Left Mouse to drag floating windows to their wanted position
 # Use $mod+Right Mouse to resize floating windows
