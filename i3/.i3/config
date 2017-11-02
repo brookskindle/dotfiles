@@ -96,6 +96,9 @@ for_window [class="VirtualBox"] title_format " %title"
 for_window [class="libreoffice.*"] title_format " %title"
 for_window [class="Evince"] title_format " %title"
 
+# Let pop-up windows (think Firefox or Chrome popups) float by default
+for_window [window_role="pop-up"] floating enable
+
 # Use $mod+Left Mouse to drag floating windows to their wanted position
 # Use $mod+Right Mouse to resize floating windows
 floating_modifier $mod
