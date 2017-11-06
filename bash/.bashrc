@@ -177,3 +177,6 @@ done
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
+# Let installed pip --user programs be executed
+export PATH="$PATH:$HOME/.local/bin/"
