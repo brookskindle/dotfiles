@@ -47,6 +47,17 @@ taken from [here](https://ubuntuforums.org/showthread.php?t=1107843).
 * sonata/ncmpcpp
 
 ## Styling Advice
+### Themes and Icons
+Here's what my desktop environment currently looks like
+![dotfiles-busy](https://user-images.githubusercontent.com/2654835/33787926-54ba0606-dc24-11e7-9283-d0ba168160a3.png)
+* I'm using the [Dracula Theme](https://github.com/dracula/dracula-theme) color
+  palette in a lot of my configs
+* I'm using
+  [Arc-Flatabulous](https://github.com/andreisergiu98/arc-flatabulous-theme)
+  for my gtk theme
+* I'm using [Flatabulous](https://github.com/anmoljagetia/Flatabulous) for the
+  icons
+
 ### Bootloader
 The plymouth bootloader is the default bootloader for Xubuntu. I chose to
 modify the background of the loading screen, but you can also change the

@@ -15,7 +15,6 @@ set $mod Mod4
 #                               |_|                       |_|
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xfsettingsd
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 # numlockx doesn't work when keyboard is plugged in. Wait a few seconds before
 # turning on numlock.
@@ -179,7 +178,7 @@ bar {
 
 # https://i3wm.org/docs/userguide.html#_changing_colors
 # class                 border  backgr. text    indicator child_border
-client.focused 			#4c7899 #6272a4 #393e40 #2e9ef4
+client.focused 			#4c7899 #6272a4 #f8f8f2 #6272a4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused		#333333 #232323 #888888 #292d2e
 client.urgent			#2f343a #900000 #ffffff #900000
