@@ -171,7 +171,7 @@ bar {
   status_command i3blocks
   font pango:FontAwesome 10
   colors {
-    background #232323
+    background #282a36
     statusline #DCDCDC
   }
 }
