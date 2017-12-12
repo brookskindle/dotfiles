@@ -20,7 +20,18 @@ def get_battery_line(battery_num):
 
 
 def display_battery_info(match):
-    """Display battery info from a regex matched line of acpi"""
+    """Display battery info from a regex matched line of acpi
+
+    and output information that works for i3blocks blocklets. The blocklet spec
+    requires the following lines to be printed:
+
+    long output
+    short output
+    color
+
+    More information can be found at
+    https://github.com/vivien/i3blocks/wiki/Writing-Your-Own-Blocklet
+    """
     fmt_str = "{charge}%{status}"
     charge = int(match["charge"])
     if match["status"] == "Discharging":
@@ -31,15 +42,18 @@ def display_battery_info(match):
         status = ""
 
     output = fmt_str.format(charge=charge, status=status)
-    # Perhaps because of the i3bar spec, we need to output it twice if we want
-    # to have color added.
     print(output)
     print(output)
-    # What color should we output this status as?
-    green = colour.Color("green")
-    red = colour.Color("red")
-    colors = list(red.range_to(green, steps=101))
-    color = colors[charge].get_hex()
+
+    # Theme with Dracula colors - https://draculatheme.com/
+    colors = (
+        ["#ff5555"] * 21  # red
+      + ["#ffb86c"] * 20  # orange
+      + ["#f1fa8c"] * 20  # yellow
+      + ["#8be9fd"] * 20  # cyan
+      + ["#50fa7b"] * 20  # green
+    )
+    color = colors[charge]
     print(color)
 
 
@@ -51,7 +65,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     line = get_battery_line(args.battery)
-    # TODO: get life remaining for battery
     regex = r"Battery (?P<num>[0-9]+): (?P<status>[a-zA-Z]+), (?P<charge>[0-9]+)%"
     match = re.match(regex, line).groupdict()
     display_battery_info(match)
