@@ -73,6 +73,8 @@ bindsym $mod+slash exec rofi -show window
 bindsym $mod+semicolon exec i3-msg focus output left
 bindsym $mod+shift+semicolon exec i3-msg move workspace to output left
 
+# Microphone mute/unmute
+bindsym XF86AudioMicMute exec amixer -D pulse sset Capture toggle
 # Volume controls
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%-
