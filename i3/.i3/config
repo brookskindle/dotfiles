@@ -24,6 +24,15 @@ exec --no-startup-id xsetroot -solid "#282a36"  # Set a solid color background
 # See http://unix.stackexchange.com/a/269329 for more info on this.
 exec --no-startup-id mpd
 
+# Start xfce4 settings daemon - it easily sets and remembers things like
+# - mouse settings (xfce4-mouse-settings)
+# - display settings (xfce4-display-settings)
+# - appearance settings (xfce4-appearance-settings)
+# Note that if xfsettingsd isn't running, none of the xfce4-* applications
+# will work correctly
+exec --no-startup-id xfsettingsd
+
+
 #   ____
 #  / ___| __ _ _ __  ___
 # | |  _ / _` | '_ \/ __|
