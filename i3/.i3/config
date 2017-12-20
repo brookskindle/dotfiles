@@ -41,8 +41,8 @@ exec --no-startup-id xfsettingsd
 #             |_|
 # i3-gaps, a better way to prettify your i3 workspace
 # https://github.com/Airblader/i3
-gaps inner 20
-gaps outer 20
+gaps inner 0
+gaps outer 0
 # i3-gaps doesn't work well with titlebars
 # https://github.com/Airblader/i3/issues/35#issuecomment-71341925
 for_window [class="^.*"] border pixel 4
