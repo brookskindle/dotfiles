@@ -1,6 +1,5 @@
 #!/bin/bash
 # Monitor reset script
-# Sometimes I forget to turn my laptop screen back on after unplugging an
-# external monitor, leaving me without a working monitor. This script is a last
-# resort that turns on the laptop screen
-xrandr --output eDP1 --auto
+# Enable both my laptop and external monitor, just in case I'm only using one
+# and the screen isn't showing.
+xrandr --output eDP1 --auto --output HDMI1 --auto
