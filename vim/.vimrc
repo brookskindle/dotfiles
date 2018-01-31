@@ -26,6 +26,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 Plugin 'fisadev/vim-isort'
 Plugin 'rodjek/vim-puppet'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 " Beautification
 Plugin 'bling/vim-bufferline'
@@ -67,6 +69,32 @@ autocmd FileType python setlocal completeopt-=preview
 let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
+
+" Integrate Limelite with Goyo
+let g:limelight_conceal_ctermfg = 'gray'
+
+" Hide tmux statusbar when entering goyo
+function! s:goyo_enter()
+  silent !tmux set status off
+  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+endfunction
+
+" Restore tmux statusbar when leaving goyo
+function! s:goyo_leave()
+  silent !tmux set status on
+  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "   ____ _       _           _   ____       _   _   _
 "  / ___| | ___ | |__   __ _| | / ___|  ___| |_| |_(_)_ __   __ _ ___
