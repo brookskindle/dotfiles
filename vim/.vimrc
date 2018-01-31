@@ -22,7 +22,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'suan/vim-instant-markdown'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 Plugin 'fisadev/vim-isort'
 Plugin 'rodjek/vim-puppet'
@@ -59,10 +59,8 @@ let g:fzf_action = {
   \ 'ctrl-o': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" Prevent Jedi from opening up a completion window when autocompleting
+" Prevent the opening of a completion window when autocompleting
 autocmd FileType python setlocal completeopt-=preview
-" Prevent Jedi from popping up function signatures when typing
-let g:jedi#show_call_signatures=0
 
 " Prevent ALE from running automatically. It can be manually called via
 " :AleLint. See https://github.com/w0rp/ale/issues/288 for more information.
