@@ -61,6 +61,11 @@ let g:fzf_action = {
   \ 'ctrl-o': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" Use FZF to grep for a string pattern
+" Taken from: https://github.com/junegunn/fzf.vim#advanced-customization
+command! -bang -nargs=* GitGrep
+  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+
 " Prevent the opening of a completion window when autocompleting
 autocmd FileType python setlocal completeopt-=preview
 
@@ -185,6 +190,8 @@ autocmd FileType tex setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Use Ctrl+F to fuzzy search for files in the current git project (from FZF)
 nnoremap <C-f> :GitFiles<CR>
+"<C-_> is actually <C-/> "https://stackoverflow.com/a/9051932
+nnoremap <C-_> :GitGrep<CR>
 
 " Move up/down a line visually regardless of the length of the line.
 nmap j gj
