@@ -19,7 +19,7 @@ exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 # numlockx doesn't work when keyboard is plugged in. Wait a few seconds before
 # turning on numlock.
 exec --no-startup-id "sleep 3 && numlockx &"
-exec --no-startup-id "sh ~/.fehbg" # set wallpaper
+exec --no-startup-id "sleep 3 && sh ~/.fehbg" # set wallpaper
 # Start mpd as a normal user - requires that mpd be disabled as a daemon
 # See http://unix.stackexchange.com/a/269329 for more info on this.
 exec --no-startup-id mpd
