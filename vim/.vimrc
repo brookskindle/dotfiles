@@ -237,7 +237,7 @@ hi ColorColumn ctermbg=4
 
 " Use syntax highlighting and color scheme
 syntax enable
-colorscheme monokain
+colorscheme dracula
 
 " Highlight trailing whitespaces and tabs
 highlight ExtraWhitespace ctermbg=red
