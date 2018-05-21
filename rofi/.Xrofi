@@ -7,7 +7,6 @@
 ! Keybindings
 ! -----------------------------------------------------------------------------
 rofi.kb-cancel: Escape,Control+c
-rofi.kb-remove-word-back: Control+w
 
 ! -----------------------------------------------------------------------------
 ! Dracula inspired theme
