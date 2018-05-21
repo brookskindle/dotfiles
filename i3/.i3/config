@@ -13,25 +13,9 @@ set $mod Mod4
 #  ___) | || (_| | |  | |_| |_| | |_) |  ___) | (__| |  | | |_) | |_\__ \
 # |____/ \__\__,_|_|   \__|\__,_| .__/  |____/ \___|_|  |_| .__/ \__|___/
 #                               |_|                       |_|
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
-# numlockx doesn't work when keyboard is plugged in. Wait a few seconds before
-# turning on numlock.
-exec --no-startup-id "sleep 3 && numlockx &"
-exec --no-startup-id "sleep 3 && sh ~/.fehbg" # set wallpaper
-# Start mpd as a normal user - requires that mpd be disabled as a daemon
-# See http://unix.stackexchange.com/a/269329 for more info on this.
-exec --no-startup-id mpd
-
-# Start xfce4 settings daemon - it easily sets and remembers things like
-# - mouse settings (xfce4-mouse-settings)
-# - display settings (xfce4-display-settings)
-# - appearance settings (xfce4-appearance-settings)
-# Note that if xfsettingsd isn't running, none of the xfce4-* applications
-# will work correctly
-exec --no-startup-id xfsettingsd
-
+exec --no-startup-id "numlockx &"
+exec --no-startup-id "sh ~/.fehbg"  # set wallpaper
 
 #   ____
 #  / ___| __ _ _ __  ___
@@ -41,8 +25,8 @@ exec --no-startup-id xfsettingsd
 #             |_|
 # i3-gaps, a better way to prettify your i3 workspace
 # https://github.com/Airblader/i3
-gaps inner 0
-gaps outer 0
+gaps inner 10
+gaps outer 10
 # i3-gaps doesn't work well with titlebars
 # https://github.com/Airblader/i3/issues/35#issuecomment-71341925
 for_window [class="^.*"] border pixel 4
@@ -54,14 +38,9 @@ font pango:FontAwesome 9
 
 # Add FontAwesome icons to the tielbars of several often-used programs
 for_window [class="Chromium-browser"] title_format " %title"
-for_window [class="X-terminal-emulator"] title_format " %title"
+for_window [class="Terminator"] title_format " %title"
 for_window [class="Thunar"] title_format " %title"
-for_window [class="yakyak"] title_format " %title"
 for_window [class="Steam"] title_format " %title"
-for_window [class="Gimp"] title_format " %title"
-for_window [class="VirtualBox"] title_format " %title"
-for_window [class="libreoffice.*"] title_format " %title"
-for_window [class="Evince"] title_format " %title"
 
 # Let pop-up windows (think Firefox or Chrome popups) float by default
 for_window [window_role="pop-up"] floating enable
@@ -70,9 +49,12 @@ for_window [window_role="pop-up"] floating enable
 # Use $mod+Right Mouse to resize floating windows
 floating_modifier $mod
 
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+b exec x-www-browser
-bindsym $mod+t exec thunar
+# Terminator doesn't seem to be startup aware, leading to a clock cursor for a
+# minute after startup. Minor nitpick, but use --no-startup-id to prevent this.
+# https://i3wm.org/docs/userguide.html#exec
+bindsym $mod+Return exec --no-startup-id terminator
+bindsym $mod+b exec chromium
+bindsym $mod+t exec Thunar
 bindsym $mod+x exec "~/bin/lock.sh"
 bindsym --release Print exec xfce4-screenshooter
 bindsym $mod+d exec rofi -show run
@@ -92,11 +74,6 @@ bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+
 bindsym F10 exec amixer -D pulse sset Master toggle
 bindsym F11 exec amixer -D pulse sset Master 3%-
 bindsym F12 exec amixer -D pulse sset Master 3%+
-
-# Monitor config (re-apply wallpaper afterwards, it usually gets messed up)
-bindsym XF86Display exec xfce4-display-settings -m && sh ~/.fehbg
-bindsym F7 exec xfce4-display-settings -m && sh ~/.fehbg
-
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -131,9 +108,6 @@ bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# Prevent rdesktop from starting in floating mode
-for_window [class="rdesktop"] floating disable
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
