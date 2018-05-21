@@ -180,3 +180,5 @@ done
 
 # Let installed pip --user programs be executed
 export PATH="$PATH:$HOME/.local/bin/"
+
+export PATH="$PATH:$HOME/bin/"
