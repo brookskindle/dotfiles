@@ -182,3 +182,6 @@ done
 export PATH="$PATH:$HOME/.local/bin/"
 
 export PATH="$PATH:$HOME/bin/"
+
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
