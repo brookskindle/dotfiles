@@ -131,30 +131,10 @@ export TEMPDIR=/tmp
 # tmux).
 export TMPDIR=$TEMPDIR
 
-# Use fzf for awesome fuzzy completion!
-# https://github.com/junegunn/fzf
-if [ -f ~/.fzf.bash ]; then
-    source ~/.fzf.bash
-fi
-
-# Go development
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/code/go
-export PATH=$PATH:$GOPATH/bin
-
-# Autocomplete for python argparse using argcomplete
-# https://github.com/kislyuk/argcomplete
-if [ -f ~/.argcomplete ]; then
-    source ~/.argcomplete
-fi
-
 # Use sensible bash options
 if [ -f ~/.sensible.bash ]; then
     source ~/.sensible.bash
 fi
-
-# Use rvm (https://rvm.io/) to manage ruby environments
-[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 
 # Let man pages use less color highlighting.
 # This fixes man page highlighting in tmux: http://stackoverflow.com/a/22202558
@@ -166,17 +146,11 @@ export LESS_TERMCAP_so=$'\E[38;5;016m\E[48;5;220m'    # begin standout-mode - in
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # If there are additional .bash scripts, let's make sure to source them.
 for f in ~/.bash.d/.*
 do
     [ -f $f ] && source $f
 done
-
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # Let installed pip --user programs be executed
 export PATH="$PATH:$HOME/.local/bin/"
