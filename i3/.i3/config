@@ -16,6 +16,7 @@ set $mod Mod4
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 exec --no-startup-id "numlockx &"
 exec --no-startup-id "sh ~/.fehbg"  # set wallpaper
+exec --no-startup-id compton
 
 #   ____
 #  / ___| __ _ _ __  ___
