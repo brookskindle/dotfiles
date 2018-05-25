@@ -159,3 +159,5 @@ export PATH="$PATH:$HOME/bin/"
 
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+# I prefer to use Ctrl+F instead of Ctrl+T to activage FZF
+bind '"\C-f": "\C-t"'
