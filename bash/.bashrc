@@ -17,9 +17,6 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 # Remove ctrl-s and ctrl-q screen pause/resume functionality on terminal
 stty -ixon
 
-# Enable programmable completion features (eg: git add <TAB>)
-source /usr/share/bash-completion/bash_completion
-
 # Use crowd-sourced bash options: https://github.com/mrzool/bash-sensible
 source ~/.sensible.bash
 
