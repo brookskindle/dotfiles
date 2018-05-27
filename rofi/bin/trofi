@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+"""
+Wrapper that makes all windows transparent before running Rofi. When Rofi
+finishes, window opacity is toggled back to 1.
+
+Requires:
+    python >= 3.6
+    rofi
+    xprop
+    grep
+    transset-df
+"""
+
+import os
+import sys
+from subprocess import DEVNULL, PIPE, run
+
+
+def get_window_ids() -> list:
+    command = "xprop -root | grep '_NET_CLIENT_LIST(WINDOW)'"
+    process = run(command, stdout=PIPE, encoding="utf-8", shell=True)
+    line = process.stdout
+    ids = line[line.find("#") + 1:].strip().split()
+    return ids
+
+
+def toggle_window_opacity(window_id, *, opacity: float=0.75):
+    command = f"transset-df --toggle --id {window_id} {opacity}"
+    process = run(command.split(), stdout=DEVNULL, stderr=DEVNULL)
+
+
+if __name__ == "__main__":
+    window_ids = get_window_ids()
+
+    for window_id in window_ids:
+        toggle_window_opacity(window_id, opacity=0.5)
+
+    run(["rofi"] + sys.argv[1:])
+
+    for window_id in window_ids:
+        toggle_window_opacity(window_id)
