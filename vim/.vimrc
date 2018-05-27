@@ -44,6 +44,9 @@ filetype plugin indent on
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
 
+" Use python3 for isort
+let g:vim_isort_python_version = 'python3'
+
 " Ignore case with sneak
 let g:sneak#use_ic_scs = 1
 
