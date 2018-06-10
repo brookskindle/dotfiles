@@ -28,7 +28,7 @@ Plugin 'fisadev/vim-isort'
 " Beautification
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-airline/vim-airline'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'dracula/vim'
 
 call vundle#end()
 " Turn filetype back on
