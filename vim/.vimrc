@@ -26,13 +26,14 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 Plugin 'fisadev/vim-isort'
 Plugin 'rodjek/vim-puppet'
+Plugin 'chikamichi/mediawiki.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 
 " Beautification
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-airline/vim-airline'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'dracula/vim'
 
 call vundle#end()
 " Turn filetype back on
