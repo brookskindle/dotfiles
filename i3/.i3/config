@@ -16,7 +16,7 @@ set $mod Mod4
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 exec --no-startup-id "numlockx &"
 exec --no-startup-id "sh ~/.fehbg"  # set wallpaper
-exec --no-startup-id compton
+exec --no-startup-id compton -D 0
 
 #   ____
 #  / ___| __ _ _ __  ___
@@ -58,8 +58,8 @@ bindsym $mod+b exec chromium
 bindsym $mod+t exec Thunar
 bindsym $mod+x exec "~/bin/lock.sh"
 bindsym --release Print exec xfce4-screenshooter
-bindsym $mod+d exec trofi -show run
-bindsym $mod+slash exec trofi -show window
+bindsym $mod+d exec rofi -show run
+bindsym $mod+slash exec rofi -show window
 # When focusing outputs, left/right will loop, and so will up/down. This lets
 # you to cycle through all your outputs with a single keybind, so long as your
 # monitors are either in all horizontal or all vertical layouts.
