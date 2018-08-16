@@ -23,7 +23,7 @@ exec --no-startup-id "sleep 3 && sh ~/.fehbg" # set wallpaper
 # Start mpd as a normal user - requires that mpd be disabled as a daemon
 # See http://unix.stackexchange.com/a/269329 for more info on this.
 exec --no-startup-id mpd
-exec --no-startup-id compton --shadow --no-dock-shadow --clear-shadow -D 0
+exec --no-startup-id compton -D 0
 
 # Start xfce4 settings daemon - it easily sets and remembers things like
 # - mouse settings (xfce4-mouse-settings)
