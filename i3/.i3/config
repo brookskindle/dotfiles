@@ -73,8 +73,8 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%-
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+
 
 # Monitor config (re-apply wallpaper afterwards, it usually gets messed up)
-bindsym XF86Display exec xfce4-display-settings -m && sh ~/.fehbg
-bindsym XF86WLAN exec networkmanager_dmenu
+bindsym XF86Display exec lxrandr && sh ~/.fehbg
+bindsym XF86Tools exec networkmanager_dmenu
 
 
 # Kill focused window
