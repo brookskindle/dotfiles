@@ -36,12 +36,6 @@ new_window pixel 4
 # the bar {} block below.
 font pango:FontAwesome 9
 
-# Add FontAwesome icons to the tielbars of several often-used programs
-for_window [class="Chromium-browser"] title_format " %title"
-for_window [class="Terminator"] title_format " %title"
-for_window [class="Thunar"] title_format " %title"
-for_window [class="Steam"] title_format " %title"
-
 # Let pop-up windows (think Firefox or Chrome popups) float by default
 for_window [window_role="pop-up"] floating enable
 
@@ -49,10 +43,7 @@ for_window [window_role="pop-up"] floating enable
 # Use $mod+Right Mouse to resize floating windows
 floating_modifier $mod
 
-# Terminator doesn't seem to be startup aware, leading to a clock cursor for a
-# minute after startup. Minor nitpick, but use --no-startup-id to prevent this.
-# https://i3wm.org/docs/userguide.html#exec
-bindsym $mod+Return exec --no-startup-id terminator
+bindsym $mod+Return exec urxvt
 bindsym $mod+b exec chromium
 bindsym $mod+t exec Thunar
 bindsym $mod+x exec "~/bin/lock.sh"
