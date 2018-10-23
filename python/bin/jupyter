@@ -20,5 +20,5 @@ if [ $returncode -ne 0 ]; then
     tmux rename-window "jupyter"
 else
     echo jupyter is already running, starting web browser
-    chromium http://localhost:8888 --new-window
+    qutebrowser http://localhost:8888/lab --target window
 fi

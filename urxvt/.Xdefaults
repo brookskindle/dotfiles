@@ -55,7 +55,7 @@ URxvt*boldFont: xft:Droid Sans Mono for Powerline:bold:pixelsize=13:antialias=tr
 URxvt*perl-ext-common: default,matcher,resize-font
 
 # Enable opening url links in the terminal (matcher)
-URxvt*url-launcher: /usr/bin/chromium
+URxvt*url-launcher: /usr/bin/qutebrowser
 URxvt*matcher.button: 1
 
 #   ____                           _   ____       _   _   _
