@@ -50,6 +50,7 @@ bindsym $mod+x exec "~/bin/lock.sh"
 bindsym --release Print exec xfce4-screenshooter
 bindsym $mod+d exec rofi -show run
 bindsym $mod+slash exec rofi -show window
+bindsym $mod+p exec rofi -modi lpass:rofi-lpass -show lpass
 # When focusing outputs, left/right will loop, and so will up/down. This lets
 # you to cycle through all your outputs with a single keybind, so long as your
 # monitors are either in all horizontal or all vertical layouts.
