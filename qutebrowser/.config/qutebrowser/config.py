@@ -26,7 +26,6 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # the mapping is ignored.
 # Type: Dict
 c.bindings.key_mappings = {
-    '<Ctrl+c>': '<Escape>',
     '<Ctrl+[>': '<Escape>',
     '<Ctrl+6>': '<Ctrl+^>',
     '<Ctrl+m>': '<Return>',
