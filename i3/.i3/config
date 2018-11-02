@@ -61,12 +61,17 @@ bindsym $mod+shift+semicolon exec i3-msg move workspace to output down && i3-msg
 bindsym XF86AudioMicMute exec amixer -D pulse sset Capture toggle
 # Volume controls
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+bindsym F10 exec amixer -D pulse sset Master toggle
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%-
+bindsym F11 exec amixer -D pulse sset Master 3%-
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+
+bindsym F12 exec amixer -D pulse sset Master 3%+
 
 # Monitor config (re-apply wallpaper afterwards, it usually gets messed up)
 bindsym XF86Display exec lxrandr && sh ~/.fehbg
+bindsym F7 exec lxrandr && sh ~/.fehbg
 bindsym XF86Tools exec networkmanager_dmenu
+bindsym F9 exec networkmanager_dmenu
 
 
 # Kill focused window
