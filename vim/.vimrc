@@ -207,6 +207,8 @@ hi ColorColumn ctermbg=4
 
 " Use syntax highlighting and color scheme
 syntax enable
+let g:dracula_colorterm=0
+let g:dracula_italic=0
 colorscheme dracula
 
 " Highlight trailing whitespaces and tabs
