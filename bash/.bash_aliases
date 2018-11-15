@@ -10,3 +10,6 @@ alias tls="tmux ls"
 
 # Edit dotfiles quickly
 alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null"
+
+# Poor man's virtualenv
+alias workon="source venv/bin/activate"

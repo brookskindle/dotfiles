@@ -15,7 +15,3 @@ source ~/.bash_aliases
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
 bind '"\C-f": "\C-t"'  # Let ctrl+f also activate FZF
-
-# Use virtualenvwrapper for python development
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh

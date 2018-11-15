@@ -16,7 +16,7 @@ if [ $returncode -ne 0 ]; then
     #   jupyter-notebook --generate-config
     # and edit the c.NotebookApp.browser and c.NotebookApp.webbrowser_open_new
     # values to your liking.
-    tmux send-keys 'workon jupyter && jupyter-lab' 'C-m'
+    tmux send-keys 'source jupyter-venv/bin/activate && jupyter-lab' 'C-m'
     tmux rename-window "jupyter"
 else
     echo jupyter is already running, starting web browser
