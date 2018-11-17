@@ -1,0 +1,12 @@
+bcm20702a1-firmware
+bcm20702b0-firmware
+bcm20703a1-firmware
+bcm43142a0-firmware
+bcm4335c0-firmware
+bcm4350c5-firmware
+bcm4356a2-firmware
+damadamas-icon-theme-git
+lxdm-themes
+networkmanager-dmenu-git
+urxvt-resize-font-git
+vimix-gtk-themes-git
