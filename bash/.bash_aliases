@@ -12,4 +12,13 @@ alias tls="tmux ls"
 alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null"
 
 # Poor man's virtualenv
-alias workon="source venv/bin/activate"
+function workon() {
+    if [ -z $1 ]
+    then
+        # No custom venv to source, use the default
+        source venv/bin/activate
+    else
+        # Custom venv directory given, lets source that!
+        source $1/bin/activate
+    fi
+}
