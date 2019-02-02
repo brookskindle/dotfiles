@@ -6,7 +6,12 @@ bcm4335c0-firmware
 bcm4350c5-firmware
 bcm4356a2-firmware
 damadamas-icon-theme-git
+heroku-cli
 lxdm-themes
 networkmanager-dmenu-git
+parsec-bin
+runelite
+the_platinum_searcher
 urxvt-resize-font-git
 vimix-gtk-themes-git
+xboxdrv
