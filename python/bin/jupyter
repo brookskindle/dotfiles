@@ -11,7 +11,7 @@ if [ $returncode -ne 0 ]; then
     tmux new-session -d -s "jupyter" -c ~/code
     # Want jupyter to open in a new window?
     # https://ga7g08.github.io/2015/01/09/ipython-notebook-new-window/
-    tmux send-keys 'workon jupyter && jupyter-notebook' 'C-m'
+    tmux send-keys 'workon jupyter && jupyter-lab' 'C-m'
     tmux rename-window "jupyter"
 else
     echo jupyter is already running, starting web browser
