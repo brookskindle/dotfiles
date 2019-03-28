@@ -1,5 +1,0 @@
-#!/bin/bash
-# Monitor reset script
-# Enable both my laptop and external monitor, just in case I'm only using one
-# and the screen isn't showing.
-xrandr --output eDP-1 --auto --output HDMI-1 --auto
