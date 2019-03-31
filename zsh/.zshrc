@@ -1,15 +1,28 @@
 export TERM="xterm-256color"
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Add sane defaults to zsh - https://github.com/robbyrussell/oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+export HOMEBREW_ROOT="/usr/local/share"
+HYPHEN_INSENSITIVE="true"
+source $HOMEBREW_ROOT/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_ROOT/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/oh-my-zsh.sh
+
+# Prompt styling - https://github.com/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_DISABLE_RPROMPT=true
 source  ~/build/powerlevel9k/powerlevel9k.zsh-theme
 
+# alias ls='ls -G'
+alias ls='colorls'
 
-# Customize powerlevel9k prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
-POWERLEVEL9K_DISABLE_RPROMPT=true
-alias ls='ls -G'
+# Enable FZF, a fuzzy search finder: https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey '\C-f' fzf-file-widget  # Let ctrl+f also activate FZF
+
+# Let pip3 --user installed binaries be found
+export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
