@@ -14,12 +14,18 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_DISABLE_RPROMPT=true
 source  ~/build/powerlevel9k/powerlevel9k.zsh-theme
 
-# alias ls='ls -G'
-alias ls='colorls'
-
 # Enable FZF, a fuzzy search finder: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey '\C-f' fzf-file-widget  # Let ctrl+f also activate FZF
+
+# alias ls='ls -G'
+alias ls='colorls'
+alias t='tmux new-session'
+alias ta='tmux attach'
+alias tls='tmux ls'
+
+# Edit dotfiles quickly
+alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null 2>&1"
 
 # Let pip3 --user installed binaries be found
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
