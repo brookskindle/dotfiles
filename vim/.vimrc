@@ -14,16 +14,22 @@ call vundle#begin()
 " https://github.com/VundleVim/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
-" Development Environment
+" General productivity
 Plugin 'justinmk/vim-sneak'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'suan/vim-instant-markdown'
 Plugin 'w0rp/ale'
-Plugin 'fisadev/vim-isort'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
+
+" Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " Beautification
 Plugin 'bling/vim-bufferline'
@@ -44,15 +50,11 @@ filetype plugin indent on
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
 
-" Use python3 for isort
-let g:vim_isort_python_version = 'python3'
-
 " Ignore case with sneak
 let g:sneak#use_ic_scs = 1
 
-" Prevent instant markdown viewer on startup
-" The viewer can be invoked via :InstantMarkdownPreview
-let g:instant_markdown_autostart = 0
+" Show hidden files in NERDTree by default
+let NERDTreeShowHidden=1
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -60,19 +62,31 @@ let g:fzf_action = {
   \ 'ctrl-o': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" Use FZF to grep for a string pattern
-" Taken from: https://github.com/junegunn/fzf.vim#advanced-customization
-command! -bang -nargs=* GitGrep
-  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+" Grep for a string pattern - requires RipGrep be installed
+" For larger repositories, you should pre-supply a search string through :Rg
+" instead.
+"
+" https://github.com/junegunn/fzf.vim/issues/714#issuecomment-428802659
+"
+" TODO: This doesn't go up to the root project directory, so if you're in a
+" sub-directory less results will be displayed.
+command! -bang -nargs=* RipGrepAll call fzf#vim#grep(
+  \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(
+  \ <q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-" Prevent the opening of a completion window when autocompleting
-autocmd FileType python setlocal completeopt-=preview
+
 
 " Prevent ALE from running automatically. It can be manually called via
 " :AleLint. See https://github.com/w0rp/ale/issues/288 for more information.
-let g:ale_lint_on_save = 0
-let g:ale_lint_on_text_changed = 0
+" let g:ale_lint_on_save = 0
+" let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
+
+" https://github.com/standard/standard
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
 
 "   ____ _       _           _   ____       _   _   _
 "  / ___| | ___ | |__   __ _| | / ___|  ___| |_| |_(_)_ __   __ _ ___
@@ -160,8 +174,12 @@ autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Use Ctrl+F to fuzzy search for files in the current git project (from FZF)
 nnoremap <C-f> :GitFiles<CR>
-"<C-_> is actually <C-/> "https://stackoverflow.com/a/9051932
-nnoremap <C-_> :GitGrep<CR>
+" Have a string you want to search for? Use ctrl+/
+nnoremap <C-_> :RipGrepAll<CR>
+
+nnoremap tn :NERDTreeToggle<CR>
+" View the current file's path in NERDTree
+nnoremap <C-p> :NERDTreeFind<CR>
 
 " Move up/down a line visually regardless of the length of the line.
 nmap j gj
