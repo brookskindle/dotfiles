@@ -10,7 +10,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Prompt styling - https://github.com/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
 POWERLEVEL9K_DISABLE_RPROMPT=true
 source  ~/build/powerlevel9k/powerlevel9k.zsh-theme
 
@@ -29,6 +29,12 @@ alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null 2>
 
 # Let pip3 --user installed binaries be found
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+
+# Use virtualenvwrapper for python envs (pip3 install --user virtualenvwrapper)
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/code
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source ~/Library/Python/3.7/bin/virtualenvwrapper.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
