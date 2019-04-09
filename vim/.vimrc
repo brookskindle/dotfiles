@@ -146,6 +146,10 @@ set ignorecase
 " Unless you explicitly use an uppercase character
 set smartcase
 
+" Using ctrl-c in insert mode triggers an omni-complete when in SQL files.
+" Disable this.
+let g:omni_sql_no_default_maps = 1
+
 "  _
 " | |    __ _ _ __   __ _ _   _  __ _  __ _  ___  ___
 " | |   / _` | '_ \ / _` | | | |/ _` |/ _` |/ _ \/ __|
