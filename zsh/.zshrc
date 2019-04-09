@@ -27,14 +27,16 @@ alias tls='tmux ls'
 # Edit dotfiles quickly
 alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null 2>&1"
 
+export PATH="$PATH:$HOME/bin"
+
 # Let pip3 --user installed binaries be found
-export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+export PATH="$PATH:$HOME/Library/Python/3.6/bin"
 
 # Use virtualenvwrapper for python envs (pip3 install --user virtualenvwrapper)
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source ~/Library/Python/3.7/bin/virtualenvwrapper.sh
+source ~/Library/Python/3.6/bin/virtualenvwrapper.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
