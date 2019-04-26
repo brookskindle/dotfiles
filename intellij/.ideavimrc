@@ -1,0 +1,5 @@
+" IntelliJ IdeaVim plugin configuration
+
+" Go to the next and previous open windows, respectively
+noremap H :next<CR>
+noremap L :Next<CR>
