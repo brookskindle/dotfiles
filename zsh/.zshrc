@@ -18,8 +18,7 @@ source  ~/build/powerlevel9k/powerlevel9k.zsh-theme
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey '\C-f' fzf-file-widget  # Let ctrl+f also activate FZF
 
-# alias ls='ls -G'
-alias ls='colorls'
+alias ls='ls -G'
 alias t='tmux new-session'
 alias ta='tmux attach'
 alias tls='tmux ls'
