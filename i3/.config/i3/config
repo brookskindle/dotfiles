@@ -149,10 +149,10 @@ bindsym $mod+shift+comma move workspace prev_on_output
 bindsym $mod+shift+period move workspace next_on_output
 
 # Jump to a workspace or window
-bindsym $mod+n exec ~/.i3/scripts/focus.sh
+bindsym $mod+n exec ~/bin/focus.sh
 
 # Rename the current workspace
-bindsym $mod+m exec ~/.i3/scripts/rename.sh
+bindsym $mod+m exec ~/bin/rename.sh
 
 # Switch to the last workspace used
 bindsym $mod+apostrophe workspace back_and_forth
