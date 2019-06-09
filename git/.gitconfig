@@ -15,7 +15,6 @@
     # Shell commands (!) are always run at the top level directory
     # http://stackoverflow.com/a/10868614
     rgrep = !git grep
-    authors = "!git log --format='%aN --> %aE' | sort | uniq"
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff --sources
 [merge "jupyternotebook"]

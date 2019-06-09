@@ -7,6 +7,10 @@
 ! Keybindings
 ! -----------------------------------------------------------------------------
 rofi.kb-cancel: Escape,Control+c
+! kb-clear-line used Control+w, and I couldn't figure out how
+! to unset a keybinding, so I settled for mapping to an unused
+! value that I'll never use.
+rofi.kb-clear-line: Super+w
 rofi.kb-remove-word-back: Control+w
 
 ! -----------------------------------------------------------------------------

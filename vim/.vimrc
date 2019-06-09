@@ -25,8 +25,6 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 Plugin 'fisadev/vim-isort'
-Plugin 'rodjek/vim-puppet'
-Plugin 'chikamichi/mediawiki.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 

@@ -29,22 +29,12 @@ these dotfiles. I'm not apologizing for that, sorry.
 ### Window manager
 * [i3](https://i3wm.org)
 * [i3blocks](https://github.com/vivien/i3blocks)
-* imagemagick
 * fonts-font-awesome
 * feh
-* scrot
-* acpi
 * [rofi](https://davedavenport.github.io/rofi/)
 
 #### Lock Screen
-By default, Xubuntu uses `xflock4` as its default lock screen manager. I prefer
-my own lock screen script. I copy it to `/usr/local/bin/xflock4` so that my
-lock screen script is used in place of the actual `xflock4` program. Solution
-taken from [here](https://ubuntuforums.org/showthread.php?t=1107843).
-
-### Media
-* mpd
-* sonata/ncmpcpp
+* i3lock-fancy
 
 ## Styling Advice
 ### Themes and Icons
@@ -57,15 +47,6 @@ Here's what my desktop environment currently looks like
   for my gtk theme
 * I'm using [Flatabulous](https://github.com/anmoljagetia/Flatabulous) for the
   icons
-
-### Bootloader
-The plymouth bootloader is the default bootloader for Xubuntu. I chose to
-modify the background of the loading screen, but you can also change the
-loading text as well.
-
-1. Modify files to your heart's content in
-   `/usr/share/plymouth/themes/xubuntu-logo/`
-1. Run `sudo update-initramfs -u` to make the changes permanent
 
 ### Login Screen
 I've edited my login screen wallpaper, but there are a few other things you can
