@@ -39,3 +39,8 @@ source ~/Library/Python/3.6/bin/virtualenvwrapper.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Direnv and GO environment setup
+export WORKSPACE=$HOME/source
+export GOPATH=$WORKSPACE/go
+eval "$(direnv hook zsh)"
