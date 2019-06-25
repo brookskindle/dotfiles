@@ -30,6 +30,8 @@ Plugin 'airblade/vim-gitgutter'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'ycm-core/YouCompleteMe'
 
 " Beautification
 Plugin 'bling/vim-bufferline'
@@ -149,6 +151,10 @@ set smartcase
 " Using ctrl-c in insert mode triggers an omni-complete when in SQL files.
 " Disable this.
 let g:omni_sql_no_default_maps = 1
+
+" Enhance YCM JavaScript completion with tern's smarts
+" https://www.reddit.com/r/node/comments/6jfb68/vim_nodejs_completion/
+autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 "  _
 " | |    __ _ _ __   __ _ _   _  __ _  __ _  ___  ___
