@@ -19,3 +19,5 @@ bind '"\C-f": "\C-t"'  # Let ctrl+f also activate FZF
 # Let FZF use the platinum searcher, as it respects .gitignore
 export FZF_DEFAULT_COMMAND="pt --files-with-matches ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+eval "$(direnv hook bash)"
