@@ -24,6 +24,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'w0rp/ale'
 Plugin 'fisadev/vim-isort'
+Plugin 'pangloss/vim-javascript'
+Plugin 'moll/vim-node'
 
 " Beautification
 Plugin 'bling/vim-bufferline'
@@ -67,12 +69,6 @@ command! -bang -nargs=* GitGrep
 
 " Prevent the opening of a completion window when autocompleting
 autocmd FileType python setlocal completeopt-=preview
-
-" Prevent ALE from running automatically. It can be manually called via
-" :AleLint. See https://github.com/w0rp/ale/issues/288 for more information.
-let g:ale_lint_on_save = 0
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_enter = 0
 
 "   ____ _       _           _   ____       _   _   _
 "  / ___| | ___ | |__   __ _| | / ___|  ___| |_| |_(_)_ __   __ _ ___
