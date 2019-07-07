@@ -30,6 +30,8 @@ Plugin 'airblade/vim-gitgutter'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+" NOTE: Getting a 'failed to start server' error?
+" Run `npm install` in ~/.vim/bundle/tern_for_vim after :BundleInstall
 Plugin 'ternjs/tern_for_vim'
 Plugin 'ycm-core/YouCompleteMe'
 
@@ -170,6 +172,7 @@ autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType json setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
