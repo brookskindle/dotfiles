@@ -39,6 +39,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'dracula/vim'
+Plugin 'rakr/vim-one'
 
 call vundle#end()
 " Turn filetype back on
@@ -158,6 +159,10 @@ let g:omni_sql_no_default_maps = 1
 " https://www.reddit.com/r/node/comments/6jfb68/vim_nodejs_completion/
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 
+" Prevent YCM from displaying the preview window
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt=0
+
 "  _
 " | |    __ _ _ __   __ _ _   _  __ _  __ _  ___  ___
 " | |   / _` | '_ \ / _` | | | |/ _` |/ _` |/ _ \/ __|
@@ -241,6 +246,8 @@ syntax enable
 let g:dracula_colorterm=0
 let g:dracula_italic=0
 colorscheme dracula
+" colorscheme one
+" set background=light
 
 " Highlight trailing whitespaces and tabs
 highlight ExtraWhitespace ctermbg=red
