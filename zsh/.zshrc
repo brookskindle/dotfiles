@@ -23,6 +23,8 @@ alias t='tmux new-session'
 alias ta='tmux attach'
 alias tls='tmux ls'
 
+alias cat='bat'
+
 # Edit dotfiles quickly
 alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null 2>&1"
 
@@ -44,3 +46,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export WORKSPACE=$HOME/source
 export GOPATH=$WORKSPACE/go
 eval "$(direnv hook zsh)"
+
+# Faster git aliases
+alias ga='git add'
+alias gs='git status'
+alias gd='git diff'
+alias gdd='git diff --cached'
+alias gp='git push'
+alias gg='git commit -v'
