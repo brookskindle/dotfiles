@@ -15,17 +15,29 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Development Environment
+" General
 Plugin 'justinmk/vim-sneak'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'suan/vim-instant-markdown'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'w0rp/ale'
+
+" Python
 Plugin 'fisadev/vim-isort'
-Plugin 'pangloss/vim-javascript'
+
+" Markdown
+Plugin 'suan/vim-instant-markdown'
+
+" Git
+Plugin 'airblade/vim-gitgutter'
+
+" Javascript
 Plugin 'moll/vim-node'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 
 " Beautification
 Plugin 'bling/vim-bufferline'
@@ -43,14 +55,25 @@ filetype plugin indent on
 " |_|   |_|\__,_|\__, |_|_| |_|  \____\___/|_| |_|_| |_|\__, |
 "                |___/                                  |___/
 
-"let airline plugin use powerline fonts
-let g:airline_powerline_fonts = 1
-
 " Use python3 for isort
 let g:vim_isort_python_version = 'python3'
 
+" Prevent the opening of a completion window when autocompleting
+autocmd FileType python setlocal completeopt-=preview
+
 " Ignore case with sneak
 let g:sneak#use_ic_scs = 1
+
+" Prevent ALE from running automatically. It can be manually called via
+" :AleLint. See https://github.com/w0rp/ale/issues/288 for more information.
+" let g:ale_lint_on_save = 0
+" let g:ale_lint_on_text_changed = 0
+" let g:ale_lint_on_enter = 1
+
+" https://github.com/standard/standard
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
 
 " Prevent instant markdown viewer on startup
 " The viewer can be invoked via :InstantMarkdownPreview
@@ -62,13 +85,18 @@ let g:fzf_action = {
   \ 'ctrl-o': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" Use FZF to grep for a string pattern
-" Taken from: https://github.com/junegunn/fzf.vim#advanced-customization
-command! -bang -nargs=* GitGrep
-  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+" Grep for a string pattern - requires RipGrep be installed
+" For larger repositories, you should pre-supply a search string through :Rg
+" instead.
+"
+" https://github.com/junegunn/fzf.vim/issues/714#issuecomment-428802659
+"
+" TODO: This doesn't go up to the root project directory, so if you're in a
+" sub-directory less results will be displayed.
+command! -bang -nargs=* RipGrepAll call fzf#vim#grep(
+  \ "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(
+  \ <q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-" Prevent the opening of a completion window when autocompleting
-autocmd FileType python setlocal completeopt-=preview
 
 "   ____ _       _           _   ____       _   _   _
 "  / ___| | ___ | |__   __ _| | / ___|  ___| |_| |_(_)_ __   __ _ ___
@@ -142,6 +170,7 @@ autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType json setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
@@ -156,8 +185,8 @@ autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Use Ctrl+F to fuzzy search for files in the current git project (from FZF)
 nnoremap <C-f> :GitFiles<CR>
-"<C-_> is actually <C-/> "https://stackoverflow.com/a/9051932
-nnoremap <C-_> :GitGrep<CR>
+" Have a string you want to search for? Use ctrl+/
+nnoremap <C-_> :RipGrepAll<CR>
 
 " Move up/down a line visually regardless of the length of the line.
 nmap j gj
