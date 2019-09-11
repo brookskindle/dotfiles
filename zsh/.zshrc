@@ -50,6 +50,7 @@ eval "$(direnv hook zsh)"
 # Faster git aliases
 alias ga='git add'
 alias gs='git status'
+alias gco='git checkout'
 alias gd='git diff'
 alias gdd='git diff --cached'
 alias gp='git push'
