@@ -15,8 +15,6 @@ set $mod Mod4
 #                               |_|                       |_|
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 exec --no-startup-id "sh ~/.fehbg"  # set wallpaper
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xfsettingsd
 exec --no-startup-id nm-applet
 
 #   ____
@@ -45,14 +43,13 @@ for_window [window_role="pop-up"] floating enable
 # Use $mod+Right Mouse to resize floating windows
 floating_modifier $mod
 
-bindsym $mod+Return exec urxvt
-bindsym $mod+b exec qutebrowser
-bindsym $mod+t exec urxvt -e 'ranger'
+bindsym $mod+Return exec terminator
+bindsym $mod+b exec chromium-browser
+bindsym $mod+t exec nemo
 bindsym $mod+x exec "~/bin/lock.sh"
 bindsym --release Print exec xfce4-screenshooter
 bindsym $mod+d exec rofi -show run
 bindsym $mod+slash exec rofi -show window
-bindsym $mod+p exec rofi -modi lpass:rofi-lpass -show lpass
 # When focusing outputs, left/right will loop, and so will up/down. This lets
 # you to cycle through all your outputs with a single keybind, so long as your
 # monitors are either in all horizontal or all vertical layouts.
@@ -73,7 +70,6 @@ bindsym F12 exec amixer -D pulse sset Master 3%+
 bindsym XF86Display exec xfce4-display-settings && sh ~/.fehbg
 bindsym F7 exec xfce4-display-settings && sh ~/.fehbg
 bindsym XF86Tools exec networkmanager_dmenu
-
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -155,7 +151,7 @@ bindsym $mod+r mode "resize"
 # Display workspace status bar
 bar {
   position top
-  status_command i3blocks
+  status_command SCRIPT_DIR=~/build/i3blocks-contrib i3blocks
   font pango:FontAwesome 10
   colors {
     background #282a36
