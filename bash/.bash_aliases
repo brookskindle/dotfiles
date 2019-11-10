@@ -22,3 +22,11 @@ function workon() {
         source $1/bin/activate
     fi
 }
+
+# Faster git aliases
+alias ga='git add'
+alias gs='git status'
+alias gd='git diff'
+alias gdd='git diff --cached'
+alias gp='git push'
+alias gg='git commit -v'
