@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+# Simple script to start my blog locally for developent
+START_DIR=~/code/brookskindle.github.io
+SESSION_NAME=blog
+
+tmux has-session -t $SESSION_NAME 1>/dev/null 2>&1
+returncode=$?
+
+if [ $returncode -ne 0 ]; then
+    tmux new-session -d -s $SESSION_NAME -c $START_DIR
+    tmux send-keys 'workon && ./develop_server.sh restart' 'C-m'
+    tmux rename-window 'server'
+    tmux new-window -c "$START_DIR/content"
+else
+    echo session already started
+fi
+
+tmux attach -t $SESSION_NAME
+qutebrowser http://localhost:8000 --target window
