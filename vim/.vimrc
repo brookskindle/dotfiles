@@ -23,6 +23,10 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'w0rp/ale'
 
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'shumphrey/fugitive-gitlab.vim'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
@@ -30,9 +34,7 @@ Plugin 'airblade/vim-gitgutter'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-" NOTE: Getting a 'failed to start server' error?
-" Run `npm install` in ~/.vim/bundle/tern_for_vim after :BundleInstall
-Plugin 'ternjs/tern_for_vim'
+Plugin 'moll/vim-node'
 Plugin 'ycm-core/YouCompleteMe'
 
 " Beautification
