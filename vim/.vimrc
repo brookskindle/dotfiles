@@ -26,6 +26,7 @@ Plugin 'w0rp/ale'
 Plugin 'fisadev/vim-isort'
 Plugin 'pangloss/vim-javascript'
 Plugin 'moll/vim-node'
+Plugin 'ycm-core/YouCompleteMe'
 
 " Beautification
 Plugin 'bling/vim-bufferline'
