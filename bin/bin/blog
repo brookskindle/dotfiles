@@ -11,10 +11,10 @@ if [ $returncode -ne 0 ]; then
     tmux new-session -d -s $SESSION_NAME -c $START_DIR
     tmux send-keys 'workon && ./develop_server.sh restart' 'C-m'
     tmux rename-window 'server'
-    tmux new-window -c "$START_DIR/content"
+    tmux new-window -c "$START_DIR/content" -n content
 else
     echo session already started
 fi
 
+qutebrowser http://localhost:8000 --target window 1>/dev/null 2>&1 &
 tmux attach -t $SESSION_NAME
-qutebrowser http://localhost:8000 --target window
