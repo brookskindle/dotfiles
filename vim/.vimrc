@@ -147,6 +147,7 @@ autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
+autocmd FileType json setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 "  _  __            ____  _           _ _
 " | |/ /___ _   _  | __ )(_)_ __   __| (_)_ __   __ _ ___
