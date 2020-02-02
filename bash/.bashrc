@@ -25,8 +25,6 @@ bind '\C-w:unix-filename-rubout'
 export FZF_DEFAULT_COMMAND="pt --files-with-matches ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Set up Go environment
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
-
 eval "$(direnv hook bash)"
+
+complete -cf sudo
