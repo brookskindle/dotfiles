@@ -31,3 +31,5 @@ alias gdd='git diff --cached'
 alias gp='git push'
 alias gg='git commit -v'
 alias gco='git checkout'
+
+alias cat='bat'
