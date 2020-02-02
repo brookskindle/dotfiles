@@ -16,14 +16,5 @@
     # http://stackoverflow.com/a/10868614
     rgrep = !git grep
     authors = "!git log --format='%aN --> %aE' | sort | uniq"
-[diff "jupyternotebook"]
-	command = git-nbdiffdriver diff --sources
-[merge "jupyternotebook"]
-	driver = git-nbmergedriver merge %O %A %B %L %P
-	name = jupyter notebook merge driver
-[difftool "nbdime"]
-	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
-[mergetool "nbdime"]
-	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
