@@ -26,5 +26,3 @@ export FZF_DEFAULT_COMMAND="pt --files-with-matches ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 eval "$(direnv hook bash)"
-
-complete -cf sudo
