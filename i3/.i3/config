@@ -115,17 +115,16 @@ bindsym $mod+p exec --no-startup-id rofi -modi lpass:rofi-lpass -show lpass
 bindsym $mod+semicolon exec i3-msg focus output down && i3-msg focus output left
 bindsym $mod+shift+semicolon exec i3-msg move workspace to output down && i3-msg move workspace to output left
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id pa-applet
 
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
-
-################################################################################################
+# Volume controls for external keyboard
+bindsym F1 exec amixer -D pulse sset Master toggle
+bindsym F2 exec amixer -D pulse sset Master 3%-
+bindsym F3 exec amixer -D pulse sset Master 3%+
+# Microphone mute/unmute
+bindsym XF86AudioMicMute exec amixer -D pulse sset Capture toggle
+bindsym F4 exec amixer -D pulse sset Capture toggle
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
