@@ -17,12 +17,21 @@ source  ~/build/powerlevel9k/powerlevel9k.zsh-theme
 # Enable FZF, a fuzzy search finder: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey '\C-f' fzf-file-widget  # Let ctrl+f also activate FZF
+export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git --files-with-matches ."
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 100'"
 
 alias ls='ls -G'
 alias t='tmux new-session'
 alias ta='tmux attach'
 alias tls='tmux ls'
 
+# Replace grep, find, and cat with nicer alternatives
+# https://github.com/ggreer/the_silver_searcher
+alias ag='ag --hidden --ignore .git'
+# https://github.com/sharkdp/fd
+alias fd='fd --hidden'
+# https://github.com/sharkdp/bat
 alias cat='bat'
 
 # Edit dotfiles quickly
