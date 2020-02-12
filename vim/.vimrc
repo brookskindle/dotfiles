@@ -37,7 +37,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
 
 " Beautification
 Plug 'bling/vim-bufferline'
@@ -205,7 +204,6 @@ command TrimWhitespace :%s/\s\+$//
 
 " Use 256 colors in color schemes
 set t_Co=256
-set term=screen-256color
 
 " Highlight color column one after the textwidth
 set colorcolumn=+1
@@ -283,9 +281,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Use `Ctrl + n` and `Ctrl + p` to navigate diagnostics
+nmap <silent> <C-n> <Plug>(coc-diagnostic-next)
+nmap <silent> <C-p> <Plug>(coc-diagnostic-prev)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -354,6 +352,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
+" Show all the lists available
+nnoremap <silent> <C-o> :<C-u>CocList lists<cr>
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions

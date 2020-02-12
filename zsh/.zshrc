@@ -26,6 +26,10 @@ bindkey ';5C' forward-word
 # just one.
 WORDCHARS=$WORDCHARS:s:/:
 
+# nvim offers better support for coc.nvim integration. So far, I'm liking
+# coc.nvim much more than YouCompleteMe for code completion/suggestions/errors.
+alias vim='nvim'
+
 # Replace grep, find, and cat with nicer alternatives
 # https://github.com/ggreer/the_silver_searcher
 alias ag='ag --hidden --ignore .git'
