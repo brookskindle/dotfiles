@@ -26,6 +26,10 @@ bindkey ';5C' forward-word
 # just one.
 WORDCHARS=$WORDCHARS:s:/:
 
+# Let tab-complete be case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+setopt no_list_ambiguous
+
 # nvim offers better support for coc.nvim integration. So far, I'm liking
 # coc.nvim much more than YouCompleteMe for code completion/suggestions/errors.
 alias vim='nvim'
