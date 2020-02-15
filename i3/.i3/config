@@ -118,9 +118,9 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
 
 # Volume controls for external keyboard
-bindsym F1 exec amixer -D pulse sset Master toggle
-bindsym F2 exec amixer -D pulse sset Master 3%-
-bindsym F3 exec amixer -D pulse sset Master 3%+
+bindsym F10 exec amixer -D pulse sset Master toggle
+bindsym F11 exec amixer -D pulse sset Master 3%-
+bindsym F12 exec amixer -D pulse sset Master 3%+
 # Microphone mute/unmute
 bindsym XF86AudioMicMute exec amixer -D pulse sset Capture toggle
 bindsym F4 exec amixer -D pulse sset Capture toggle
