@@ -17,9 +17,11 @@ autoload -Uz promptinit
 promptinit
 prompt fade blue
 
-# Make ctrl + left/right arrow go back/forward one word
-bindkey ';5D' backward-word
-bindkey ';5C' forward-word
+# use ctrl + left/right, and Home/End to navigate current line
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[4~' end-of-line
 
 # Modify zsh's word split regex so that we can erase just one part of a
 # directory. Eg: erasing ~/dotfiles/zsh takes three ctrl+w motions, instead of
