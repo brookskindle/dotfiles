@@ -101,7 +101,9 @@ for_window [window_role="pop-up"] floating enable
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-bindsym $mod+Return exec terminal
+# Open a new terminal in the same cwd as the currently focused terminal
+# https://github.com/schischi/xcwd
+bindsym $mod+Return exec termite -d $(xcwd)
 bindsym $mod+b exec $BROWSER
 bindsym $mod+t exec pcmanfm
 bindsym $mod+x exec --no-startup-id blurlock
