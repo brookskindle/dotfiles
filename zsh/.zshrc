@@ -15,7 +15,7 @@ compinit
 # Set status prompt (view styles with prompt -p)
 autoload -Uz promptinit
 promptinit
-prompt fade blue
+prompt fade red
 
 # use ctrl + left/right, and Home/End to navigate current line
 bindkey '^[[1;5D' backward-word
