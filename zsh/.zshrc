@@ -17,11 +17,19 @@ autoload -Uz promptinit
 promptinit
 prompt fade red
 
-# use ctrl + left/right, and Home/End to navigate current line
+# Use ctrl + left/right, and Home/End to navigate current line
+#
+# In tmux
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
+
+# And in termite: https://github.com/thestinger/termite/issues/496
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
 
 # Modify zsh's word split regex so that we can erase just one part of a
 # directory. Eg: erasing ~/dotfiles/zsh takes three ctrl+w motions, instead of
