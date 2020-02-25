@@ -21,6 +21,8 @@ export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git --files-with-matches ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 100'"
 
+alias vim='nvim'
+
 alias ls='ls -G'
 alias t='tmux new-session'
 alias ta='tmux attach'

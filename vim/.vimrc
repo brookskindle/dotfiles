@@ -37,6 +37,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Beautification
 Plug 'bling/vim-bufferline'
@@ -192,9 +198,8 @@ nnoremap <C-f> :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
 "<C-_> is actually <C-/> "https://stackoverflow.com/a/9051932
 nnoremap <C-_> :SilverGrep<CR>
 
-nnoremap tn :NERDTreeToggle<CR>
 " View the current file's path in NERDTree
-nnoremap <C-p> :NERDTreeFind<CR>
+nnoremap tn :NERDTreeFind<CR>
 
 " Move up/down a line visually regardless of the length of the line.
 nmap j gj
