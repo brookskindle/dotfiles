@@ -29,6 +29,7 @@ let g:coc_global_extensions = [
 
 " Improve syntax and indentation of js files
 Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Development Environment
 Plug 'justinmk/vim-sneak'
