@@ -49,6 +49,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 Plug 'dracula/vim'
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -61,6 +62,7 @@ call plug#end()
 
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
+let g:airline_theme='one'
 
 " Ignore case with sneak
 let g:sneak#use_ic_scs = 1
@@ -175,11 +177,17 @@ let g:ycm_add_preview_to_completeopt=0
 
 au BufRead,BufNewFile *.html setlocal filetype=htmldjango
 
+" Typescript
+au BufRead,BufNewFile *.tsx setlocal filetype=javascriptreact
+
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType scss setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType json setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
@@ -198,6 +206,7 @@ autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 nnoremap <C-f> :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
 "<C-_> is actually <C-/> "https://stackoverflow.com/a/9051932
 nnoremap <C-_> :SilverGrep<CR>
+nnoremap <C-b> :Buffers<CR>
 
 " View the current file's path in NERDTree
 nnoremap tn :NERDTreeFind<CR>
@@ -250,6 +259,14 @@ let g:dracula_italic=0
 colorscheme dracula
 " colorscheme one
 " set background=light
+function Dark()
+    :colorscheme dracula
+    :set background=dark
+endfunction
+function Light()
+    :colorscheme one
+    :set background=light
+endfunction
 
 " Highlight trailing whitespaces and tabs
 highlight ExtraWhitespace ctermbg=red
