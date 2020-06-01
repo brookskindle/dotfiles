@@ -8,6 +8,10 @@ source $HOMEBREW_ROOT/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_ROOT/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
+# PHENOMENAL COSMIC POWER
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+
 # Prompt styling - https://github.com/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
@@ -58,6 +62,9 @@ export WORKSPACE=$HOME/source
 export GOPATH=$WORKSPACE/go
 eval "$(direnv hook zsh)"
 
+# Provide auto-complete for aws-cli command
+source ~/Library/Python/3.6/bin/aws_zsh_completer.sh
+
 # Faster git aliases
 alias ga='git add'
 alias gs='git status'
@@ -66,3 +73,11 @@ alias gd='git diff'
 alias gdd='git diff --cached'
 alias gp='git push'
 alias gg='git commit -v'
+
+alias copy='pbcopy'
+alias paste='pbpaste'
+
+# Allow kubectl tab-completion
+source <(kubectl completion zsh)
+alias k='kubectl'
+complete -F __start_kubectl k
