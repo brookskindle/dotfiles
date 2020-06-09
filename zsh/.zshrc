@@ -102,3 +102,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Autoload per-directory environment variables - https://direnv.net/
 eval "$(direnv hook zsh)"
+
+# Kubernetes (K8s) autocompletion and aliases
+source <(kubectl completion zsh)
+alias k=kubectl
+complete -F __start_kubectl k
