@@ -16,6 +16,7 @@ set $mod1 Mod1
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 exec --no-startup-id "sleep 3 && numlockx &"
 exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id xautolock -time 5 -locker xflock4
 
 ## From Manjaro
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -24,7 +25,6 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfsettingsd
 exec --no-startup-id sleep 1; nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id pamac-tray
-exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id fix_xcursor
 
 #   ____
@@ -108,7 +108,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite -d $(xcwd)
 bindsym $mod+b exec $BROWSER
 bindsym $mod+t exec pcmanfm
-bindsym $mod+x exec --no-startup-id blurlock
+bindsym $mod+x exec --no-startup-id xflock4
 bindsym --release Print exec --no-startup-id xfce4-screenshooter
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+slash exec --no-startup-id ~/.i3/scripts/new.sh
