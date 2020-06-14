@@ -111,7 +111,7 @@ bindsym $mod+t exec pcmanfm
 bindsym $mod+x exec --no-startup-id xflock4
 bindsym --release Print exec --no-startup-id xfce4-screenshooter
 bindsym $mod+d exec --no-startup-id rofi -show run
-bindsym $mod+slash exec --no-startup-id ~/.i3/scripts/new.sh
+bindsym $mod+slash exec --no-startup-id rofi -show window
 # When focusing outputs, left/right will loop, and so will up/down. This lets
 # you to cycle through all your outputs with a single keybind, so long as your
 # monitors are either in all horizontal or all vertical layouts.
