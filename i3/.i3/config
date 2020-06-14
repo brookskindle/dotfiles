@@ -34,15 +34,15 @@ exec_always --no-startup-id fix_xcursor
 #  \____|\__,_| .__/|___/
 #             |_|
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 3
 default_floating_border normal
 
 # Hide borders
 hide_edge_borders none
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+gaps inner 5
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
