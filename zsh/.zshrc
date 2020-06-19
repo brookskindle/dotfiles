@@ -81,3 +81,11 @@ alias paste='pbpaste'
 source <(kubectl completion zsh)
 alias k='kubectl'
 complete -F __start_kubectl k
+
+# Use the brew installed version of curl. The default curl shipped in MacOS
+# Mojave 10.14.6 is built with libressl 2.6.5 Which doesn't properly identify
+# certificates with expired root CAs in the chain.
+#
+# https://blog.algolia.com/may-30-ssl-incident/
+# https://security.stackexchange.com/a/232446
+export PATH="/usr/local/opt/curl/bin:$PATH"
