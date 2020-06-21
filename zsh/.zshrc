@@ -15,7 +15,8 @@ compinit
 # Set status prompt (view styles with prompt -p)
 autoload -Uz promptinit
 promptinit
-prompt fade red
+# https://github.com/denysdovhan/spaceship-prompt
+prompt spaceship
 
 # Use ctrl + left/right, and Home/End to navigate current line
 #
