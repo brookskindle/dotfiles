@@ -89,3 +89,4 @@ complete -F __start_kubectl k
 # https://blog.algolia.com/may-30-ssl-incident/
 # https://security.stackexchange.com/a/232446
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/libressl/bin:$PATH"
