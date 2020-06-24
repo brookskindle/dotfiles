@@ -273,9 +273,11 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar
-	status_command i3status
-	position top
+    status_command i3blocks
+    position top
+    # TODO: workspace titles messed up?
+    # https://forum.manjaro.org/t/i3bar-fallback-font-and-baseline-of-the-font/92668
+    font pango:Font Awesome 5 Free Solid
 
     colors {
         background #222D31
