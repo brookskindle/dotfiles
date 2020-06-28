@@ -277,7 +277,7 @@ bar {
     position top
     # TODO: workspace titles messed up?
     # https://forum.manjaro.org/t/i3bar-fallback-font-and-baseline-of-the-font/92668
-    font pango:Font Awesome 5 Free Solid
+    font pango: DroidSansEthiopic, Font Awesome 5 Free 13
 
     colors {
         background #222D31
