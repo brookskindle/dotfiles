@@ -72,6 +72,13 @@ alias gp='git push'
 alias gg='git commit -v'
 alias gco='git checkout'
 
+# I'm lazy
+alias open='xdg-open'
+
+# Clipboard integration
+alias copy='xclip -sel clip'
+alias paste='xclip -out -sel clip'
+
 # Configure fzf, a command line fuzzy finder - https://github.com/junegunn/fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
