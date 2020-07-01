@@ -275,8 +275,6 @@ set_from_resource $term_color15    color15
 bar {
     status_command i3blocks
     position top
-    # TODO: workspace titles messed up?
-    # https://forum.manjaro.org/t/i3bar-fallback-font-and-baseline-of-the-font/92668
     font pango: DroidSansEthiopic, Font Awesome 5 Free
 
     colors {
