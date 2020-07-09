@@ -38,6 +38,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
 " Beautification
 Plug 'bling/vim-bufferline'
@@ -52,6 +53,9 @@ call plug#end()
 " |  __/| | |_| | (_| | | | | | | |__| (_) | | | |  _| | (_| |
 " |_|   |_|\__,_|\__, |_|_| |_|  \____\___/|_| |_|_| |_|\__, |
 "                |___/                                  |___/
+
+let g:instant_markdown_autostart = 0
+" let g:instant_markdown_open_to_the_world = 1
 
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
