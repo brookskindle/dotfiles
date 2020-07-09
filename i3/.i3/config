@@ -26,7 +26,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfsettingsd
-exec --no-startup-id sleep 1; nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id sleep 2; nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id pamac-tray
 exec_always --no-startup-id fix_xcursor
 
@@ -136,9 +136,9 @@ bindsym F4 exec amixer -D pulse sset Capture toggle
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
-# Monitor config (re-apply wallpaper afterwards, it usually gets messed up)
-bindsym XF86Display exec xfce4-display-settings && nitrogen --restore
-bindsym F7 exec xfce4-display-settings && sh nitrogen --restore
+# Monitor config
+bindsym XF86Display exec select-monitor-layout.sh
+bindsym F7 exec select-monitor-layout.sh
 
 # Kill focused window
 bindsym $mod+Shift+q kill
