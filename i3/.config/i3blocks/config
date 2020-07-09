@@ -38,26 +38,26 @@ signal=10
 color=#bd93f9
 
 [memory]
-label=
+label= 
 interval=15
 color=#ff55555
 
 [cpu_usage]
-label=
+label= 
 interval=10
 color=#50fa7b
 
 [temperature]
-label=
+label= 
 interval=15
 
 [battery]
-label=
+label= 
 command=python ~/.i3/scripts/battery.py
 interval=30
 
 [datetime]
-label=
+label= 
 command=date '+%a %b %d %_I:%M%p'
 interval=5
 color=#6272a4
