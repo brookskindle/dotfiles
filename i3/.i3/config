@@ -110,7 +110,8 @@ floating_modifier $mod
 # https://github.com/schischi/xcwd
 bindsym $mod+Return exec termite -d $(xcwd)
 bindsym $mod+b exec $BROWSER
-bindsym $mod+t exec pcmanfm
+# Open a file browser
+bindsym $mod+t exec termite -e "ranger -d $(xcwd)"
 bindsym $mod+x exec --no-startup-id xflock4
 bindsym --release Print exec --no-startup-id xfce4-screenshooter
 bindsym $mod+d exec --no-startup-id rofi -show run
