@@ -24,6 +24,12 @@
 separator_block_width=15
 command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 
+[recording]
+command=pgrep ffmpeg >/dev/null && echo 'RECORDING' || echo 'OFF'
+interval=3
+color=#ff79c6
+label= 
+
 [volume]
 label=♪
 instance=Master -D pulse
