@@ -40,11 +40,8 @@ WORDCHARS=$WORDCHARS:s:/:
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt no_list_ambiguous
 
-# nvim offers better support for coc.nvim integration. So far, I'm liking
-# coc.nvim much more than YouCompleteMe for code completion/suggestions/errors.
+# https://github.com/neovim/neovim
 alias vim='nvim'
-
-# Replace grep, find, and cat with nicer alternatives
 # https://github.com/ggreer/the_silver_searcher
 alias ag='ag --hidden --ignore .git'
 # https://github.com/sharkdp/fd
