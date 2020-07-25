@@ -12,11 +12,10 @@ zstyle :compinstall filename '/home/brooks/.zshrc'
 autoload -Uz compinit
 compinit
 
-# Set status prompt (view styles with prompt -p)
-autoload -Uz promptinit
-promptinit
-# https://github.com/denysdovhan/spaceship-prompt
-prompt spaceship
+# Minimal prompt (with base-256 dracula colors)
+# Last two folders of current directory: %2~
+# Last command exit code: %(?.goodcolor.badcolor)
+export PROMPT='%F{183}%2~ %F{%(?.231.210)}$ '
 
 # Use ctrl + left/right, and Home/End to navigate current line
 #
