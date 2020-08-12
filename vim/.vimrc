@@ -44,6 +44,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
 " Beautification
 Plug 'bling/vim-bufferline'
@@ -59,6 +60,10 @@ call plug#end()
 " |  __/| | |_| | (_| | | | | | | |__| (_) | | | |  _| | (_| |
 " |_|   |_|\__,_|\__, |_|_| |_|  \____\___/|_| |_|_| |_|\__, |
 "                |___/                                  |___/
+
+" Live markdown previews
+let g:instant_markdown_autostart = 0
+" let g:instant_markdown_autoscroll = 0
 
 "let airline plugin use powerline fonts
 let g:airline_powerline_fonts = 1
