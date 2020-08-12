@@ -90,3 +90,6 @@ complete -F __start_kubectl k
 # https://security.stackexchange.com/a/232446
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/libressl/bin:$PATH"
+
+# Tmux uses ctrl+a; use tmux's old prefix key (ctrl+b) instead
+bindkey '^B' beginning-of-line
