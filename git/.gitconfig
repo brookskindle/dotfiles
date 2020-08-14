@@ -1,0 +1,44 @@
+[user]
+	email = brookskindle+git@gmail.com
+	name = Brooks Kindle
+[core]
+	editor = vim
+	pager = diff-so-fancy | less --tabs=1,5 -RFX
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[push]
+	default = simple
+[alias]
+    # Grep over the entire repository, regardless of current working directory
+    # Shell commands (!) are always run at the top level directory
+    # http://stackoverflow.com/a/10868614
+    rgrep = !git grep
+    authors = "!git log --format='%aN --> %aE' | sort | uniq -c | sort --reverse"
+    # Show all revisions of a single file.
+    # https://blog.andrewray.me/a-better-git-blame/
+    history = "log --patch --find-renames --stat --follow --"
+    # Show project root directory
+	root = rev-parse --show-toplevel
+[pager]
+	branch = false
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[diff-so-fancy]
+	first-run = false
+[pull]
+	rebase = false
