@@ -1,2 +1,3 @@
 # Thanks to http://stackoverflow.com/a/32096090
 alias die import os;os.system("kill -9 {}".format(os.getpid()))
+alias ipy import IPython;IPython.embed(colors="Neutral")
