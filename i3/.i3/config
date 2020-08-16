@@ -122,6 +122,14 @@ bindsym $mod+slash exec --no-startup-id rofi -show window
 bindsym $mod+semicolon exec --no-startup-id i3-msg focus output down && i3-msg focus output left
 bindsym $mod+shift+semicolon exec --no-startup-id i3-msg move workspace to output down && i3-msg move workspace to output left
 
+# Translate a word from Italian to English
+# https://github.com/soimort/translate-shell
+bindsym $mod+i exec --no-startup-id termite --role pop-up translate -e 'trans it:en -I -speak -download-audio-as /tmp/original-italian.ts'
+bindsym $mod+shift+i exec --no-startup-id mpg123 /tmp/original-italian.ts
+# Or vice versa, from English to Italian
+bindsym $mod+u exec --no-startup-id termite --role pop-up translate -e 'trans en:it -I -download-audio-as /tmp/translated-italian.ts'
+bindsym $mod+shift+u exec --no-startup-id mpg123 /tmp/translated-italian.ts
+
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
 
