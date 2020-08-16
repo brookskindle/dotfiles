@@ -117,21 +117,21 @@ bindsym --release Print exec --no-startup-id xfce4-screenshooter
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+slash exec --no-startup-id rofi -show window
 # When focusing outputs, left/right will loop, and so will up/down. This lets
-# you to cycle through all your outputs with a single keybind, so long as your
+# you cycle through all your outputs with a single keybind, so long as your
 # monitors are either in all horizontal or all vertical layouts.
-bindsym $mod+semicolon exec i3-msg focus output down && i3-msg focus output left
-bindsym $mod+shift+semicolon exec i3-msg move workspace to output down && i3-msg move workspace to output left
+bindsym $mod+semicolon exec --no-startup-id i3-msg focus output down && i3-msg focus output left
+bindsym $mod+shift+semicolon exec --no-startup-id i3-msg move workspace to output down && i3-msg move workspace to output left
 
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
 
 # Volume controls for external keyboard
-bindsym F10 exec amixer -D pulse sset Master toggle
-bindsym F11 exec amixer -D pulse sset Master 3%-
-bindsym F12 exec amixer -D pulse sset Master 3%+
+bindsym F10 exec --no-startup-id amixer -D pulse sset Master toggle
+bindsym F11 exec --no-startup-id amixer -D pulse sset Master 3%-
+bindsym F12 exec --no-startup-id amixer -D pulse sset Master 3%+
 # Microphone mute/unmute
-bindsym XF86AudioMicMute exec amixer -D pulse sset Capture toggle
-bindsym F4 exec amixer -D pulse sset Capture toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer -D pulse sset Capture toggle
+bindsym F4 exec --no-startup-id amixer -D pulse sset Capture toggle
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
