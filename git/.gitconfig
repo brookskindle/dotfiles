@@ -1,20 +1,27 @@
 [user]
-	email = brookskindle+git@gmail.com
-	name = Brooks Kindle
+    email = brookskindle+git@gmail.com
+    name = Brooks Kindle
 [core]
-	editor = vim
+    editor = vim
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+    tool = vimdiff
+    conflictstyle = diff3
 [mergetool]
-	prompt = false
+    prompt = false
 [push]
-	default = simple
+    default = simple
 [alias]
     # Grep over the entire repository, regardless of current working directory
     # Shell commands (!) are always run at the top level directory
     # http://stackoverflow.com/a/10868614
     rgrep = !git grep
-    authors = "!git log --format='%aN --> %aE' | sort | uniq"
+    authors = "!git log --format='%aN --> %aE' | sort | uniq -c | sort -nr"
+    # Show all revisions for a single file
+    # https://blog.andrewray.me/a-better-git-blame/
+    history = "log --patch --find-renames --stat --follow --"
+    # Print project root directory
+    root = rev-parse --show-toplevel
 [difftool]
-	prompt = false
+    prompt = false
+[pull]
+    rebase = false
