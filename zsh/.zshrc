@@ -1,6 +1,6 @@
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=999999
+SAVEHIST=999999
 setopt appendhistory #Append history to the history file (no overwriting)
 setopt share_history #Share history across terminals
 setopt incappendhistory #Immediately append to the history file, not just when a term is killed
