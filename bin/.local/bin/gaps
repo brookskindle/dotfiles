@@ -1,0 +1,11 @@
+#!/bin/bash
+
+OUTER="$1"
+INNER="$2"
+WORKSPACE="current"
+if [[ "$3" == "all" ]]; then
+    WORKSPACE="all"
+fi
+
+i3-msg gaps outer $WORKSPACE set "$OUTER"
+i3-msg gaps inner $WORKSPACE set "$INNER"
