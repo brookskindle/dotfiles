@@ -15,7 +15,7 @@ compinit
 # Minimal prompt (with base-256 dracula colors)
 # Last two folders of current directory: %2~
 # Last command exit code: %(?.goodcolor.badcolor)
-export PROMPT='%F{183}%2~ %F{%(?.231.210)}$ '
+export PROMPT='%F{183}%2~ %F{%(?.231.210)}λ '
 
 # Use ctrl + left/right, and Home/End to navigate current line
 #
