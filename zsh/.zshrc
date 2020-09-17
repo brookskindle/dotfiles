@@ -17,6 +17,12 @@ compinit
 # Last command exit code: %(?.goodcolor.badcolor)
 export PROMPT='%F{183}%2~ %F{%(?.231.210)}λ '
 
+# Allow local scripts to be executed
+export PATH=$PATH:$HOME/.local/bin
+
+# Let less support colors and be case-insensitive by default
+export LESS="-Ri"
+
 # Use ctrl + left/right, and Home/End to navigate current line
 #
 # In tmux
@@ -103,6 +109,3 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Syntax highlight commands in the shell
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Autoload per-directory environment variables - https://direnv.net/
-eval "$(direnv hook zsh)"
