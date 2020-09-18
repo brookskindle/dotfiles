@@ -17,7 +17,7 @@ exec --no-startup-id i3-msg rename workspace to main
 #                               |_|                       |_|
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id xautolock -time 1 -locker draculock
+exec --no-startup-id xautolock -time 5 -locker draculock
 
 ## From Manjaro
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

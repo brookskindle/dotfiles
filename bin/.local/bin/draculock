@@ -15,8 +15,9 @@ YELLOW="f1fa8c"
 
 i3lock \
     --blur 5 \
-    --pass-media-keys \
+    --pass-volume-keys \
     --clock \
+    --ignore-empty-password \
     --greetercolor=$FOREGROUND \
     --verifcolor=$FOREGROUND \
     --wrongcolor=$FOREGROUND \
