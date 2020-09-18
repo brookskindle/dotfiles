@@ -33,6 +33,7 @@ neovim
 nodejs
 npm
 openssh
+pacman-contrib
 patch
 pavucontrol
 pkgconf
