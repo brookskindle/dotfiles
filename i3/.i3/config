@@ -16,7 +16,7 @@ exec --no-startup-id i3-msg rename workspace to main
 # |____/ \__\__,_|_|   \__|\__,_| .__/  |____/ \___|_|  |_| .__/ \__|___/
 #                               |_|                       |_|
 exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
-exec --no-startup-id xmodmap ~/.Xmodmap
+exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xautolock -time 5 -locker draculock
 
 ## From Manjaro
@@ -50,7 +50,7 @@ smart_borders on
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:URWGothic-Book 11
+font xft:Hack 11
 
 # Let pop-up windows (think Firefox or Chrome popups) float by default
 for_window [window_role="pop-up"] floating enable
@@ -222,7 +222,7 @@ set_from_resource $term_color15    color15
 bar {
     status_command i3blocks
     position top
-    font pango: DroidSansEthiopic, Font Awesome 5 Free
+    font xft: Hack 13
 
     colors {
         background #222D31

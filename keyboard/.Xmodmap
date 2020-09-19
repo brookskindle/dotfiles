@@ -1,4 +1,4 @@
-! change caps lock to Escape.
+! Change caps lock to Escape.
 !
 ! Need to re-run this file?
 !   xmodmap ~/.Xmodmap

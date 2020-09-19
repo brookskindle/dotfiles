@@ -6,4 +6,4 @@ cd ~/.screenlayout
 ls | rofi -dmenu -p "Set monitor layout" | xargs sh
 
 # Re-apply wallpaper background
-nitrogen --restore
+sh ~/.fehbg

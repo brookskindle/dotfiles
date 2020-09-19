@@ -1,5 +1,6 @@
 acpi
 arandr
+arc-gtk-theme
 autoconf
 automake
 base
@@ -17,6 +18,7 @@ git
 hid-apple-patched-git-dkms
 i3-gaps
 i3blocks
+i3blocks-contrib
 i3lock-color
 iwd
 jq
@@ -45,14 +47,19 @@ scrot
 stow
 strace
 sudo
+sysstat
 termite
 texinfo
 the_silver_searcher
 tmux
+ttf-font-awesome
+ttf-hack
 unzip
 vim
 visidata
+w3m
 xautolock
+xcursor-breeze
 xcwd-git
 xf86-video-intel
 xorg-server
