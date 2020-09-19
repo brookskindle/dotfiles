@@ -33,6 +33,7 @@ man-pages
 neofetch
 neovim
 nodejs
+noto-fonts-emoji
 npm
 openssh
 pacman-contrib
@@ -59,6 +60,7 @@ vim
 visidata
 w3m
 xautolock
+xclip
 xcursor-breeze
 xcwd-git
 xf86-video-intel

@@ -114,6 +114,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+minus scratchpad show
 bindsym $mod+shift+minus move scratchpad
 
+# Search for an emoji to copy
+bindsym $mod+equal exec grep -v '^#' ~/.emoji-test.txt | grep fully-qualified | cut -d '#' -f 2- | rofi -dmenu -p 'Choose emoji' | awk '{ printf $1 }' | xclip -sel clip
+
 # Move around windows in a vim-like fashion
 bindsym $mod+h focus left
 bindsym $mod+j focus down
