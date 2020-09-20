@@ -70,6 +70,6 @@ interval=30
 
 [datetime]
 label= 
-command=date '+%a %b %d %H:%M'
+command=date '+%a %b %d %_I:%M%p'
 interval=5
 color=#6272a4
