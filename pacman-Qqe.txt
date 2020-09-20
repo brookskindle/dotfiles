@@ -20,6 +20,7 @@ i3-gaps
 i3blocks
 i3blocks-contrib
 i3lock-color
+intel-ucode
 iwd
 jq
 linux
