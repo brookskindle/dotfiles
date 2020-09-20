@@ -24,6 +24,12 @@
 separator_block_width=15
 command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 
+[pacman]
+command=untracked-packages
+label=  
+color=#ff5555
+interval=once
+
 [keyboard]
 command=setxkbmap -query | grep layout | cut -d: -f2 | tr -d ' '
 interval=5
