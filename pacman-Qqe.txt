@@ -31,6 +31,7 @@ m4
 make
 man-db
 man-pages
+mpg123
 neofetch
 neovim
 nodejs
@@ -44,6 +45,7 @@ pkgconf
 pulseaudio
 python
 ranger
+rlwrap
 rofi
 scrot
 stow
@@ -54,6 +56,7 @@ termite
 texinfo
 the_silver_searcher
 tmux
+translate-shell
 ttf-font-awesome
 ttf-hack
 unzip
