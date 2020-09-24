@@ -41,6 +41,10 @@ command=pgrep ffmpeg >/dev/null && echo '' || echo ''
 interval=5
 color=#ff79c6
 
+[microphone]
+command=(pactl list sources | grep -A 20 'Source #1' | grep 'Mute: yes' >/dev/null) && echo  || echo 
+interval=1
+
 [volume]
 command=(pactl list sinks | ag 'yes' | ag -o mute) || (pactl list sinks | ag '\tVolume' | ag -o '\d+%' | head -1)
 label=♪ 
