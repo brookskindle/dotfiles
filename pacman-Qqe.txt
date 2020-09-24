@@ -21,6 +21,7 @@ i3blocks
 i3blocks-contrib
 i3lock-color
 intel-ucode
+ipython
 iwd
 jq
 linux
@@ -44,6 +45,8 @@ pavucontrol
 pkgconf
 pulseaudio
 python
+python-ipdb
+python-pip
 ranger
 rlwrap
 rofi
