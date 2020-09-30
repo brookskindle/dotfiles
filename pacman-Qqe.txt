@@ -45,6 +45,7 @@ pavucontrol
 pkgconf
 pulseaudio
 python
+python-dateutil
 python-ipdb
 python-pip
 ranger
