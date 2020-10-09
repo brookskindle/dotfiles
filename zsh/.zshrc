@@ -21,6 +21,7 @@ source  ~/build/powerlevel9k/powerlevel9k.zsh-theme
 # Enable FZF, a fuzzy search finder: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey '\C-f' fzf-file-widget  # Let ctrl+f also activate FZF
+# TODO: ag won't match empty files. Use fd instead to get around this limitation
 export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git --files-with-matches ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 100'"
@@ -77,19 +78,18 @@ alias gg='git commit -v'
 alias copy='pbcopy'
 alias paste='pbpaste'
 
-# Allow kubectl tab-completion
-source <(kubectl completion zsh)
-alias k='kubectl'
-complete -F __start_kubectl k
-
-# Use the brew installed version of curl. The default curl shipped in MacOS
-# Mojave 10.14.6 is built with libressl 2.6.5 Which doesn't properly identify
-# certificates with expired root CAs in the chain.
-#
-# https://blog.algolia.com/may-30-ssl-incident/
-# https://security.stackexchange.com/a/232446
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/libressl/bin:$PATH"
+function init_kubectl() {
+    # Allow kubectl tab-completion
+    alias k='kubectl'
+    source <(kubectl completion zsh)
+    complete -F __start_kubectl k
+}
 
 # Tmux uses ctrl+a; use tmux's old prefix key (ctrl+b) instead
 bindkey '^B' beginning-of-line
+
+function init_nvm() {
+    export NVM_DIR=~/.nvm
+    # source $(brew --prefix nvm)/nvm.sh
+    source /usr/local/opt/nvm/nvm.sh
+}
