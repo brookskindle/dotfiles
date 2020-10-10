@@ -73,6 +73,8 @@ alias gdd='git diff --cached'
 alias gp='git push'
 alias gg='git commit -v'
 alias gco='git checkout'
+alias gl='git log --graph --pretty="format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s"'
+alias gll='git log --patch --graph --pretty="format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s"'
 
 # I'm lazy
 alias open='xdg-open'
