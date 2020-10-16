@@ -40,6 +40,9 @@ alias cat='bat'
 # Edit dotfiles quickly
 alias dot="pushd ~/dotfiles >/dev/null && vim +':GitFiles' && popd >/dev/null 2>&1"
 
+# Default options for the `less` program
+export LESS="-Ri"
+
 export PATH="$PATH:$HOME/bin"
 
 # Let pip3 --user installed binaries be found
