@@ -12,11 +12,7 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
-# Prompt styling - https://github.com/bhilburn/powerlevel9k
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
-POWERLEVEL9K_DISABLE_RPROMPT=true
-source  ~/build/powerlevel9k/powerlevel9k.zsh-theme
+export PROMPT='%F{183}%2~ %F{%(?.231.210)}λ '
 
 # Enable FZF, a fuzzy search finder: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
