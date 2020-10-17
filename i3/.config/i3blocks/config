@@ -30,19 +30,14 @@ label= 
 color=#ff5555
 interval=once
 
-[recording]
-command=pgrep ffmpeg >/dev/null && echo '' || echo ''
-interval=5
-color=#ff79c6
-
 [microphone]
 command=(pactl list sources | grep -A 20 'Source #1' | grep 'Mute: yes' >/dev/null) && echo  || echo 
-interval=1
+interval=5
 
 [volume]
 command=(pactl list sinks | ag 'yes' | ag -o mute) || (pactl list sinks | ag '\tVolume' | ag -o '\d+%' | head -1)
 label=♪ 
-interval=1
+interval=5
 color=#bd93f9
 
 [memory]
@@ -62,13 +57,13 @@ interval=15
 [wifi]
 label= 
 command=grep wlan0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) "%"}'
-interval=5
+interval=15
 color=#8be9fd
 
 [battery]
 label= 
 command=python ~/.i3/scripts/battery.py
-interval=30
+interval=60
 
 [datetime]
 label= 
