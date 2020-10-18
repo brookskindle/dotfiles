@@ -1,4 +1,6 @@
 acpi
+adobe-source-han-sans-cn-fonts
+adobe-source-han-sans-jp-fonts
 arandr
 arc-gtk-theme
 autoconf
@@ -16,6 +18,7 @@ fzf
 gcc
 gcolor2
 git
+gnu-free-fonts
 hid-apple-patched-git-dkms
 i3-gaps
 i3blocks
