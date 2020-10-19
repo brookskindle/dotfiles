@@ -1,6 +1,7 @@
 acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-jp-fonts
+adobe-source-han-sans-kr-fonts
 arandr
 arc-gtk-theme
 autoconf
