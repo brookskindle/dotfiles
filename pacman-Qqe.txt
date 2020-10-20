@@ -54,7 +54,6 @@ python-ipdb
 python-pip
 ranger
 rofi
-runelite
 scrot
 stow
 strace
