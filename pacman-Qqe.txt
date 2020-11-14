@@ -18,6 +18,7 @@ flex
 fzf
 gcc
 gcolor2
+gimp
 git
 gnu-free-fonts
 hid-apple-patched-git-dkms
