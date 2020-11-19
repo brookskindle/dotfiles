@@ -69,6 +69,7 @@ ttf-hack
 unzip
 vim
 visidata
+vlc
 w3m
 xautolock
 xclip
