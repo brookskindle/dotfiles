@@ -47,8 +47,10 @@ openssh
 pacman-contrib
 patch
 pavucontrol
+pianobar
 pkgconf
 pulseaudio
+pulseaudio-alsa
 python
 python-dateutil
 python-ipdb
