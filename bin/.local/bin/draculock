@@ -35,5 +35,6 @@ i3lock \
     --radius 400 \
     --veriftext="Verifying" \
     --wrongtext="Try again" \
+    --datestr="%A, %B %d" \
     --noinputtext=""
 
