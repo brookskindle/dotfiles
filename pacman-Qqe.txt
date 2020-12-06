@@ -11,6 +11,7 @@ bat
 binutils
 bison
 chromium
+discord
 fakeroot
 fd
 feh
@@ -58,6 +59,7 @@ python-pip
 ranger
 rofi
 scrot
+steam
 stow
 strace
 sudo
