@@ -19,7 +19,7 @@ exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xautolock -time 5 -locker draculock
 
-exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpaper/*
+exec --no-startup-id sh ~/.fehbg
 
 #   ____
 #  / ___| __ _ _ __  ___
