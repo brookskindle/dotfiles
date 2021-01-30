@@ -33,7 +33,7 @@ let g:coc_global_extensions = [
     \'coc-json',
     \]
 
-" Improve syntax and indentation of js files
+" Improve syntax and indentation of js and jsx files
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 

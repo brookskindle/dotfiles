@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
-# Want to know what a key is named? Use 'xev' to find out.
+# Want to know what a key is named? Use the command 'xev' to find out.
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -15,7 +15,7 @@ exec --no-startup-id i3-msg rename workspace to main
 #  ___) | || (_| | |  | |_| |_| | |_) |  ___) | (__| |  | | |_) | |_\__ \
 # |____/ \__\__,_|_|   \__|\__,_| .__/  |____/ \___|_|  |_| .__/ \__|___/
 #                               |_|                       |_|
-exec --no-startup-id xrdb -merge ~/.Xrofi  # Configure rofi
+exec --no-startup-id xrdb -merge ~/.Xrofi  # configure rofi
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xautolock -time 5 -locker draculock
 
@@ -109,7 +109,7 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split orientation
+# Split orientation
 bindsym $mod+o split v
 bindsym $mod+v split h
 
