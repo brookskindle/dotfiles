@@ -58,6 +58,8 @@ python-ipdb
 python-pip
 ranger
 rofi
+runelite
+runescape-launcher
 scrot
 steam
 stow
