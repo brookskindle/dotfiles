@@ -39,6 +39,7 @@ m4
 make
 man-db
 man-pages
+mpg123
 neofetch
 neovim
 nodejs
@@ -57,6 +58,7 @@ python-dateutil
 python-ipdb
 python-pip
 ranger
+rlwrap
 rofi
 runelite
 runescape-launcher
@@ -70,6 +72,7 @@ termite
 texinfo
 the_silver_searcher
 tmux
+translate-shell
 ttf-font-awesome
 ttf-hack
 unzip

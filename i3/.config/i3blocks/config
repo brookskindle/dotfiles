@@ -30,6 +30,12 @@ label= 
 color=#ff5555
 interval=once
 
+[keyboard]
+command=setxkbmap -query | grep layout | cut -d: -f2 | tr -d ' '
+interval=5
+color=#f1fa8c
+label= 
+
 [microphone]
 command=(pactl list sources | grep -A 20 'Source #1' | grep 'Mute: yes' >/dev/null) && echo  || echo 
 interval=5
