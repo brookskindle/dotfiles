@@ -58,7 +58,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite -d $(xcwd)
 bindsym $mod+b exec $BROWSER
 # Open a file browser
-bindsym $mod+t exec termite -e "ranger -d $(xcwd)"
+bindsym $mod+t exec termite -e "ranger $(xcwd)"
 bindsym $mod+x exec --no-startup-id draculock
 bindsym --release Print exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
 bindsym --release Alt_R exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
