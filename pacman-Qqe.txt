@@ -58,6 +58,7 @@ python-dateutil
 python-ipdb
 python-lxml
 python-pip
+python-pywal
 ranger
 rlwrap
 rofi

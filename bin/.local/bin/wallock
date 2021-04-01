@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# i3lock-color with pywal color integration
+# https://github.com/dylanaraps/pywal
+source ~/.cache/wal/colors.sh || i3lock  # lock screen if color sourcing fails
+
+BACKGROUND=$background
+TEXT_COLOR=$foreground
+RING_COLOR=$color1
+KEYPRESS_COLOR=$foreground
+BACKSPACE_COLOR=$background
+
+i3lock \
+    --blur 5 \
+    --pass-volume-keys \
+    --clock \
+    --ignore-empty-password \
+    --greetercolor=$TEXT_COLOR \
+    --verifcolor=$TEXT_COLOR \
+    --wrongcolor=$TEXT_COLOR \
+    --datecolor=$TEXT_COLOR \
+    --timecolor=$TEXT_COLOR \
+    --keyhlcolor=$KEYPRESS_COLOR \
+    --separatorcolor=$KEYPRESS_COLOR \
+    --bshlcolor=$BACKSPACE_COLOR \
+    --ringcolor=$RING_COLOR \
+    --ringvercolor=$RING_COLOR \
+    --ringwrongcolor=$RING_COLOR \
+    --insidecolor=$BACKGROUND \
+    --insidevercolor=$BACKGROUND \
+    --insidewrongcolor=$BACKGROUND \
+    --radius 400 \
+    --veriftext="Verifying" \
+    --wrongtext="Try again" \
+    --datestr="%A, %B %d" \
+    --noinputtext=""

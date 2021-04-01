@@ -116,3 +116,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+# Import colorscheme from 'wal' synchronously
+# https://github.com/dylanaraps/pywal/wiki/Getting-Started
+\cat ~/.cache/wal/sequences # Use actual cat, not bat

@@ -18,7 +18,7 @@ exec --no-startup-id i3-msg rename workspace to main
 #                               |_|                       |_|
 exec --no-startup-id xrdb -merge ~/.Xrofi  # configure rofi
 exec_always --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id xautolock -time 5 -locker draculock
+exec --no-startup-id xautolock -time 5 -locker wallock
 
 exec --no-startup-id sh ~/.fehbg
 
@@ -49,6 +49,7 @@ font xft:Hack 11
 
 # Let pop-up windows (think Firefox or Chrome popups) float by default
 for_window [window_role="pop-up"] floating enable
+for_window [window_role="wallpaper"] floating enable, resize set 1500 750, move absolute position center
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -58,8 +59,9 @@ floating_modifier $mod
 bindsym $mod+Return exec termite -d $(xcwd)
 bindsym $mod+b exec $BROWSER
 # Open a file browser
-bindsym $mod+t exec termite -e "ranger $(xcwd)"
-bindsym $mod+x exec --no-startup-id draculock
+bindsym $mod+t exec termite -d $(xcwd) -e "zsh -i -c ranger"
+bindsym $mod+p exec termite -d ~/Pictures/wallpaper --role wallpaper -e "zsh -i -c ranger"
+bindsym $mod+x exec --no-startup-id wallock
 bindsym --release Print exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
 bindsym --release Alt_R exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
 bindsym $mod+d exec --no-startup-id rofi -show run
@@ -221,6 +223,15 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $neutral i3wm.color0 #f0f0f0
+
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
     status_command i3blocks
@@ -228,25 +239,24 @@ bar {
     font xft: Hack 13
 
     colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
+        background $neutral
+        statusline $fg
+        separator  $fg
 
 #                          border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        focused_workspace  $fg $bg $fg
+        active_workspace   $fg $neutral $fg
+        inactive_workspace $neutral $neutral $fg
+        binding_mode       $term_color3 $term_color3 $fg
+        urgent_workspace   $term_color4 $term_color4 $fg
     }
 }
 
-# Manjaro theme colors
-# class                 border  backgr. text    indic.   child_border
-client.focused          #556064 #ff79c6 #2F3D44 #FDF6E3
-client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-client.placeholder      #000000 #0c0c0c #ffffff #000000
+# class                 border  backgr. text indicator child_border
+client.focused          $fg     $fg     $bg  $bg       $fg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-client.background       #2B2C2B
+client.background       $bg

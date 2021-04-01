@@ -49,7 +49,8 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " Beautification
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
-Plug 'dracula/vim'
+Plug 'dylanaraps/wal.vim'
+
 
 call plug#end()
 
@@ -222,9 +223,7 @@ hi ColorColumn ctermbg=4
 
 " Use syntax highlighting and color scheme
 syntax enable
-let g:dracula_colorterm=0
-let g:dracula_italic=0
-colorscheme dracula
+colorscheme wal
 
 " Highlight trailing whitespaces and tabs
 highlight ExtraWhitespace ctermbg=red
