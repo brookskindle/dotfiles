@@ -74,10 +74,10 @@ bindsym $mod+shift+semicolon exec --no-startup-id i3-msg move workspace to outpu
 
 # Translate a word from Spanish to English
 # https://github.com/soimort/translate-shell
-bindsym $mod+i exec --no-startup-id termite --role pop-up translate -e 'trans es:en -I -speak -download-audio-as /tmp/original-spanish.ts'
+bindsym $mod+i exec --no-startup-id termite --role pop-up translate -e "zsh -i -c 'trans es:en -I -speak -download-audio-as /tmp/original-spanish.ts'"
 bindsym $mod+shift+i exec --no-startup-id mpg123 /tmp/original-spanish.ts
 # Or vice versa, from English to Spanish
-bindsym $mod+u exec --no-startup-id termite --role pop-up translate -e 'trans en:es -I -download-audio-as /tmp/translated-spanish.ts'
+bindsym $mod+u exec --no-startup-id termite --role pop-up translate -e "zsh -i -c 'trans en:es -I -download-audio-as /tmp/translated-spanish.ts'"
 bindsym $mod+shift+u exec --no-startup-id mpg123 /tmp/translated-spanish.ts
 
 # Toggle between keyboard regular and international keyboard layouts
