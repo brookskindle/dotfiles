@@ -12,6 +12,7 @@ bat
 binutils
 bison
 chromium
+colorz
 discord
 fakeroot
 fd
@@ -57,6 +58,7 @@ pulseaudio
 pulseaudio-alsa
 python
 python-dateutil
+python-haishoku
 python-ipdb
 python-lxml
 python-pip
