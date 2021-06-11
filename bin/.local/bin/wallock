@@ -15,22 +15,22 @@ i3lock \
     --pass-volume-keys \
     --clock \
     --ignore-empty-password \
-    --greetercolor=$TEXT_COLOR \
-    --verifcolor=$TEXT_COLOR \
-    --wrongcolor=$TEXT_COLOR \
-    --datecolor=$TEXT_COLOR \
-    --timecolor=$TEXT_COLOR \
-    --keyhlcolor=$KEYPRESS_COLOR \
-    --separatorcolor=$KEYPRESS_COLOR \
-    --bshlcolor=$BACKSPACE_COLOR \
-    --ringcolor=$RING_COLOR \
-    --ringvercolor=$RING_COLOR \
-    --ringwrongcolor=$RING_COLOR \
-    --insidecolor=$BACKGROUND \
-    --insidevercolor=$BACKGROUND \
-    --insidewrongcolor=$BACKGROUND \
+    --greeter-color=$TEXT_COLOR \
+    --verif-color=$TEXT_COLOR \
+    --wrong-color=$TEXT_COLOR \
+    --date-color=$TEXT_COLOR \
+    --time-color=$TEXT_COLOR \
+    --keyhl-color=$KEYPRESS_COLOR \
+    --separator-color=$KEYPRESS_COLOR \
+    --bshl-color=$BACKSPACE_COLOR \
+    --ring-color=$RING_COLOR \
+    --ringver-color=$RING_COLOR \
+    --ringwrong-color=$RING_COLOR \
+    --inside-color=$BACKGROUND \
+    --insidever-color=$BACKGROUND \
+    --insidewrong-color=$BACKGROUND \
     --radius 400 \
-    --veriftext="Verifying" \
-    --wrongtext="Try again" \
-    --datestr="%A, %B %d" \
-    --noinputtext=""
+    --verif-text="Verifying" \
+    --wrong-text="Try again" \
+    --date-str="%A, %B %d" \
+    --noinput-text=""
