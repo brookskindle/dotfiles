@@ -63,8 +63,8 @@ bindsym $mod+t exec termite -d $(xcwd) -e "zsh -i -c ranger"
 bindsym $mod+p exec termite -d ~/Pictures/wallpaper --role wallpaper -e "zsh -i -c ranger"
 bindsym $mod+slash exec termite -d ~/dotfiles --role pop-up -e "zsh -i -c fzwal.sh"
 bindsym $mod+x exec --no-startup-id wallock
-bindsym --release Print exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
-bindsym --release Alt_R exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
+bindsym --release Print exec --no-startup-id scrot -z -s -e 'mv $f ~/Pictures'
+bindsym --release Alt_R exec --no-startup-id scrot -z -s -e 'mv $f ~/Pictures'
 bindsym $mod+d exec --no-startup-id rofi -show run
 # When focusing outputs, left/right will loop, and so will up/down. This lets
 # you cycle through all your outputs with a single keybind, so long as your
