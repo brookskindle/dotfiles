@@ -179,6 +179,7 @@ for_window [class="Anki"] floating enable
 assign [title="RuneLite"] "osrs"
 assign [title="RuneScape"] "rs3"
 assign [title="Steam"] "steam"
+assign [title="Discord"] "social"
 
 
 # Resize a window
