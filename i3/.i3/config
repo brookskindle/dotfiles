@@ -6,6 +6,7 @@
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+set $mod1 Mod1
 
 # Name the first workspace
 exec --no-startup-id i3-msg rename workspace to main
@@ -109,6 +110,7 @@ bindsym $mod+Shift+q kill
 
 # Hide/show floating scratchpad
 bindsym $mod+minus scratchpad show
+bindsym $mod1+Tab scratchpad show
 bindsym $mod+shift+minus move scratchpad
 
 # Search for an emoji to copy
