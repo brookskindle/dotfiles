@@ -2,7 +2,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR=/usr/bin/vim
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/usr/bin/chromium
+export BROWSER=/usr/bin/firefox
 
 # Let man pages use less color highlighting (otherwise it's all black & white)
 # Also fixes man page highlighting in tmux: http://stackoverflow.com/a/22202558

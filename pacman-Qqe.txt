@@ -11,11 +11,11 @@ base
 bat
 binutils
 bison
-chromium
 discord
 fakeroot
 fd
 feh
+firefox
 flex
 fzf
 gcc
