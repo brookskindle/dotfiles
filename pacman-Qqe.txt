@@ -64,6 +64,8 @@ python-pywal
 ranger
 rlwrap
 rofi
+runelite
+runescape-launcher
 scrot
 simplescreenrecorder
 steam

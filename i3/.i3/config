@@ -171,10 +171,13 @@ bindsym $mod+Shift+e exec i3-msg exit
 # Open specific applications in floating mode
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
+for_window [title="RuneLite Launcher"] floating enable
 for_window [title="SimpleScreenRecorder"] floating enable
 for_window [class="Anki"] floating enable
 
 # Open certain applications in specific workspaces
+assign [title="RuneLite"] "osrs"
+assign [title="RuneScape"] "rs3"
 assign [title="Steam"] "steam"
 assign [title="Discord"] "social"
 
