@@ -32,6 +32,7 @@ i3lock-color
 intel-ucode
 ipython
 iwd
+jdk17-openjdk
 jq
 linux
 linux-firmware
