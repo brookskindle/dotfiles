@@ -34,6 +34,7 @@ ipython
 iwd
 jdk17-openjdk
 jq
+lib32-libpng
 linux
 linux-firmware
 ltrace
