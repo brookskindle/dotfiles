@@ -3,6 +3,7 @@ adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 anki
+alsa-utils
 arandr
 arc-gtk-theme
 autoconf
@@ -45,6 +46,7 @@ mpv
 neofetch
 neovim
 nodejs
+noise-suppression-for-voice
 noto-fonts-emoji
 npm
 openssh
@@ -89,11 +91,14 @@ xautolock
 xclip
 xcursor-breeze
 xcwd-git
+xdotool
+xf86-input-synaptics
 xf86-video-intel
 xorg-server
 xorg-xbacklight
 xorg-xev
 xorg-xinit
+xorg-xinput
 xorg-xkill
 xorg-xmodmap
 yay
