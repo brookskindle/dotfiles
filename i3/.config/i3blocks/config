@@ -71,6 +71,13 @@ label=
 command=python ~/.i3/scripts/battery.py
 interval=60
 
+[uptime]
+label= 
+# Note, this will only work for uptimes of less than one day
+command=uptime | awk '{print $3}' | tr -d ','
+interval=60
+color=#f8f8f2
+
 [datetime]
 label= 
 command=date '+%a %b %d %_I:%M%p'
