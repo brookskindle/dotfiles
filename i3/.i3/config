@@ -50,7 +50,7 @@ font xft:Hack 11
 
 # Let pop-up windows (think Firefox or Chrome popups) float by default
 for_window [window_role="pop-up"] floating enable
-for_window [window_role="wallpaper"] floating enable, resize set 1500 750, move absolute position center
+for_window [window_role="pictures"] floating enable, resize set 1500 750, move absolute position center
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -61,7 +61,7 @@ bindsym $mod+Return exec termite -d $(xcwd)
 bindsym $mod+b exec $BROWSER
 # Open a file browser
 bindsym $mod+t exec termite -d $(xcwd) -e "zsh -i -c ranger"
-bindsym $mod+p exec termite -d ~/Pictures/wallpaper --role wallpaper -e "zsh -i -c ranger"
+bindsym $mod+p exec termite -d ~/Pictures --role pictures -e "zsh -i -c ranger"
 bindsym $mod+slash exec termite -d ~/dotfiles --role pop-up -e "zsh -i -c fzwal.sh"
 bindsym $mod+x exec --no-startup-id wallock
 bindsym --release Print exec --no-startup-id scrot -z -s -e 'mv $f ~/Pictures'
