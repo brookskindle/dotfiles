@@ -173,7 +173,6 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [title="RuneLite Launcher"] floating enable
 for_window [title="SimpleScreenRecorder"] floating enable
-for_window [class="Anki"] floating enable
 
 # Open certain applications in specific workspaces
 assign [title="RuneLite"] "osrs"
