@@ -179,6 +179,8 @@ assign [title="RuneLite"] "osrs"
 assign [title="RuneScape"] "rs3"
 assign [title="Steam"] "steam"
 assign [title="Discord"] "social"
+assign [class="Gimp"] "pics"
+assign [class="firefox"] "web"
 
 
 # Resize a window
