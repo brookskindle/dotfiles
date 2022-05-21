@@ -11,6 +11,7 @@ base
 bat
 binutils
 bison
+chromium
 discord
 fakeroot
 fd
