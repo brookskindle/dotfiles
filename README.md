@@ -13,3 +13,11 @@ fairly frequently and I wanted to document the steps taken to install it. I
 quite like the simplicity and control that Arch gives its users, and even if I
 do switch away from it, I'll probably make my way back to it again at some
 point in the future so I might as well make it easier for myself to re-install!
+
+# Mouse support?
+https://wiki.archlinux.org/title/Touchpad_Synaptics
+
+go to
+```console
+$ vim /etc/X11/xorg.conf.d/70-synaptics.conf
+```
