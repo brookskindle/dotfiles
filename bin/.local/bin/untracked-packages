@@ -1,9 +1,38 @@
-#!/bin/bash
-#
-# Update the list of explicitly installed system packages, and report the short
-# diff of changes between now and the last commit
-#
-FILE=~/dotfiles/pacman-Qqe.txt
-pacman -Qqe > $FILE
+#!/usr/bin/env python
+import os
+from subprocess import Popen, PIPE
 
-git -C $(dirname $FILE) diff --shortstat $FILE | cut -d, -f 2- | tr -d 'a-z ()'
+
+def get_installed_packages():
+    """Return a set of explicitly installed packages on the system"""
+    process = Popen(["pacman", "-Qqe"], stdout=PIPE, stderr=PIPE)
+    stdout, _ = process.communicate()
+    packages = stdout.decode("utf-8").splitlines()
+    return set(packages)
+
+def get_tracked_packages():
+    """Return the set of packages currently being tracked by dotfiles"""
+    with open(os.path.expanduser("~/dotfiles/pacman-Qqe.txt")) as file:
+        lines = file.read().splitlines()
+
+    packages = set([
+        line for line in lines
+        if line  # this isn't an empty line, right?
+        and not line.strip().startswith("#")  # and also not a comment line?
+    ])
+    return packages
+
+def main():
+    installed = get_installed_packages()
+    tracked = get_tracked_packages()
+
+    new_packages = installed.difference(tracked)
+    removed_packages = tracked.difference(installed)
+
+    print(f"+{len(new_packages)},-{len(removed_packages)}")
+    print(f"Net new packages (installed but not tracked): {new_packages}")
+    print(f"Old packages (tracked but not installed): {removed_packages}")
+
+
+if __name__ == "__main__":
+    main()
