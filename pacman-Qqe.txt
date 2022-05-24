@@ -86,7 +86,9 @@ translate-shell
 ttf-font-awesome
 ttf-hack
 unzip
+vagrant
 vim
+virtualbox
 visidata
 vlc
 w3m
