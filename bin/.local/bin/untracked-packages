@@ -30,8 +30,18 @@ def main():
     removed_packages = tracked.difference(installed)
 
     print(f"+{len(new_packages)},-{len(removed_packages)}")
-    print(f"Net new packages (installed but not tracked): {new_packages}")
-    print(f"Old packages (tracked but not installed): {removed_packages}")
+    print()
+
+    print(f"Net new packages (installed but not tracked)")
+    print(f"--------------------------------------------")
+    for package in new_packages:
+        print(package)
+    print()
+
+    print(f"Old packages (tracked but not installed)")
+    print(f"----------------------------------------")
+    for package in removed_packages:
+        print(package)
 
 
 if __name__ == "__main__":
