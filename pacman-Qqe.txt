@@ -112,3 +112,25 @@ zathura-pdf-mupdf
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
+
+# Lutris + other packages required for battle.net / blizzard games
+# https://github.com/lutris/docs/blob/master/Battle.Net.md
+lutris
+wine-staging
+lib32-libpulse
+vulkan-intel
+lib32-libxcomposite
+lib32-gst-plugins-base-libs
+lib32-mpg123
+lib32-gtk3
+ocl-icd
+lib32-giflib
+lib32-openal
+lib32-ocl-icd
+lib32-gnutls
+lib32-vulkan-intel
+lib32-libxslt
+lib32-libjpeg-turbo
+lib32-v4l-utils
+lib32-libva
+lib32-libxinerama
