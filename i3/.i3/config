@@ -110,7 +110,8 @@ bindsym $mod+Shift+q kill
 
 # Hide/show floating scratchpad
 bindsym $mod+minus scratchpad show
-bindsym $mod1+Tab scratchpad show
+# bindsym $mod1+Tab scratchpad show
+bindsym $mod1+Tab workspace back_and_forth
 bindsym $mod+shift+minus move scratchpad
 
 # Search for an emoji to copy
@@ -181,6 +182,8 @@ assign [title="Steam"] "steam"
 assign [title="Discord"] "social"
 assign [class="Gimp"] "pics"
 assign [class="firefox"] "web"
+assign [class="Lutris"] "lutris"
+assign [class="VirtualBox*"] "virtualbox"
 
 
 # Resize a window

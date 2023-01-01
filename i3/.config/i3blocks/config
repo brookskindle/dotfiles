@@ -71,6 +71,11 @@ label=
 command=python ~/.i3/scripts/battery.py
 interval=60
 
+[battery2]
+label= 
+command=python ~/.i3/scripts/battery.py -b 1
+interval=60
+
 [uptime]
 label= 
 # Note, this will only work for uptimes of less than one day
